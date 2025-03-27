@@ -1,0 +1,17 @@
+.marketCapBlock {
+    width: 80vw;
+    height: 60vh;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+}
+
+.marketCapBlock div {
+    min-height: 0;
+    max-height: 60vh;
+    height: 100%;
+    width: 100%;
+}
+
+.marketCapBlock__info_element {
+    border: 1px solid black;
+}
