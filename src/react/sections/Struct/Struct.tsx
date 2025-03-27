@@ -4,6 +4,7 @@ import { AppDispatch } from "@/store/store";
 import { useEffect, useState } from "react";
 import { fetchCurrencies } from "@/store/currenciesSlice";
 import MarketVisualization from "./components/Visualization/MarketVisualization";
+import StockDescription from "./components/StockDescription/StockDescription";
 
 export default function Struct() {
     const [visualizationVisible, setVisualizationVisible] = useState(false);
@@ -16,7 +17,10 @@ export default function Struct() {
     }, []);
 
     let visalizedBlock = visualizationVisible ? (
-        <MarketVisualization></MarketVisualization>
+        <div>
+            <MarketVisualization></MarketVisualization>
+            <StockDescription></StockDescription>
+        </div>
     ) : (
         <></>
     );

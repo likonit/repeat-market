@@ -23,7 +23,6 @@ export default function StructCheckboxBlock({
                     checked={checked}
                     onChange={() => {
                         dispatch(changeFieldsValue({ index, value: !checked }));
-                        console.log("checked");
                     }}
                 ></input>
             </label>

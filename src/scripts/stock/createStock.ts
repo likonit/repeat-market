@@ -11,26 +11,49 @@ export default function createStock(
     coins: CoinRowInfoAdvanced[],
     budget: number
 ): StockCoinInfo[] {
+    const minBuyUSDValue = 1;
     let i = 0;
     const initialBudget = budget;
     const stockResult: StockCoinInfo[] = [];
 
+    let limitedMarketCap = 0;
+
     while (budget > 0) {
         const currentCoin = coins[i];
         let coinUSDvalue = initialBudget * currentCoin.weight;
+        budget -= coinUSDvalue;
+        limitedMarketCap += currentCoin.marketCap;
+
+        if (
+            budget < minBuyUSDValue ||
+            i + 1 == coins.length ||
+            coinUSDvalue < minBuyUSDValue
+        ) {
+            budget = 0;
+        }
+        i++;
+    }
+
+    budget = initialBudget;
+    i = 0;
+
+    console.log(limitedMarketCap);
+    while (budget > 0) {
+        const currentCoin = coins[i];
+        const currWeight = currentCoin.marketCap / limitedMarketCap;
+        let coinUSDvalue = initialBudget * currWeight;
+
         let coinValue = coinUSDvalue / currentCoin.price;
         budget -= coinUSDvalue;
 
-        if (budget < 2 || i + 1 == coins.length) {
-            coinUSDvalue += budget;
-            coinValue += budget / currentCoin.price;
-            budget = 0;
+        if (budget < minBuyUSDValue || i + 1 == coins.length) {
+            break;
         }
 
-        const stakeInfo = stakeBybit.get(currentCoin.name);
+        const stakeInfo = stakeBybit.get(currentCoin.symbol);
         stockResult.push({
             ...currentCoin,
-            weight: coinUSDvalue / initialBudget,
+            weight: currWeight,
             coinValue,
             usdValue: coinUSDvalue,
             APR: stakeInfo

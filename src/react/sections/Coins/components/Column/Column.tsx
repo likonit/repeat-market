@@ -2,7 +2,6 @@ import { CoinRowInfo } from "@/react/types";
 import ChangeCoinPrice from "./ChangePrice";
 
 export default function CoinColumn({ info }: { info: CoinRowInfo }) {
-    console.log(info);
     return (
         <div>
             <div>

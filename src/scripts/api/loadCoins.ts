@@ -1,5 +1,4 @@
 import { CoinRowInfo } from "@/react/types";
-import logoNameFormatter from "../helpers/logoNameFormatter";
 
 export default async function loadCoins(
     limit: number = 120
@@ -11,7 +10,7 @@ export default async function loadCoins(
         const jsonData: { status: any; data: any[] } = await fetchResult.json();
         const rows: CoinRowInfo[] = jsonData.data.map((item, i) => {
             return {
-                imageLink: logoNameFormatter(item.slug, item.symbol),
+                imageLink: `https://s2.coinmarketcap.com/static/img/coins/64x64/${item.id}.png`,
                 id: i,
                 name: item.name,
                 symbol: item.symbol,

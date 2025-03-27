@@ -22,9 +22,6 @@ export default function VisualizationGridBlock({
         display: "grid",
     };
 
-    console.log(info.coins);
-    console.log(firstFR);
-
     if (!type) styling.gridTemplateRows = `${firstFR}fr ${100 - firstFR}fr`;
     else styling.gridTemplateColumns = `${firstFR}fr ${100 - firstFR}fr`;
 
