@@ -6,7 +6,7 @@ interface inputStore {
 }
 
 const initialState: inputStore = {
-    fields: [false, false, true],
+    fields: [true, true, false],
     input: 0,
 };
 

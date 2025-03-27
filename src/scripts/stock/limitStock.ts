@@ -3,21 +3,21 @@ import { StockCoinInfo } from "./createStock";
 // заменяет оставшийся набор монет на одну монету "Другое"
 export default function limitStock(coins: StockCoinInfo[], limit: number) {
     const result: StockCoinInfo[] = [];
-    let otherWeight = 1,
-        totalMarketCap = coins.reduce(
-            (sum, item) => (sum += item.marketCap),
-            0
-        );
+    let totalMarketCap = coins.reduce(
+        (sum, item) => (sum += item.marketCap),
+        0
+    );
+
+    const initMarketCap = totalMarketCap;
 
     for (let i = 0; i < Math.min(coins.length - 1, limit - 1); i++) {
         const currentCoin = coins[i];
-        otherWeight -= currentCoin.weight;
         totalMarketCap -= currentCoin.marketCap;
         result.push(currentCoin);
     }
 
     result.push({
-        weight: otherWeight,
+        weight: totalMarketCap / initMarketCap,
         name: "Другие",
         symbol: "Другие",
         imageLink: "",
@@ -29,6 +29,8 @@ export default function limitStock(coins: StockCoinInfo[], limit: number) {
         marketCap: totalMarketCap,
         changePercent: -1,
     });
+
+    console.log(result);
 
     result.sort((a, b) => b.weight - a.weight);
 

@@ -12,16 +12,16 @@ export default function StructInputBlock({
     const dispatch = useDispatch();
     const checkBoxes: CheckBoxInfo[] = [
         {
-            name: "Убрать мемкоины",
-            checked: false,
-        },
-        {
-            name: "Убрать стейблкоины",
-            checked: false,
-        },
-        {
-            name: "Можно положить под %",
+            name: "Не учитывать мемкоины",
             checked: true,
+        },
+        {
+            name: "Не учитывать стейблкоины",
+            checked: true,
+        },
+        {
+            name: "Только монеты с Bybit earn (стейкинг, ончейн и т.д.)",
+            checked: false,
         },
     ];
 

@@ -1,13 +1,13 @@
 .marketCapBlock {
-    width: 80vw;
-    height: 60vh;
+    width: 95vw;
+    height: 70vh;
     display: grid;
     grid-template-rows: minmax(0, 1fr);
 }
 
 .marketCapBlock div {
     min-height: 0;
-    max-height: 60vh;
+    max-height: 70vh;
     height: 100%;
     width: 100%;
 }

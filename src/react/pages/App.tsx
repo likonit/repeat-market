@@ -1,10 +1,19 @@
+import { useSelector } from "react-redux";
 import About from "../sections/About/About";
-import Coins from "../sections/Coins/Coins";
 import Header from "../sections/Header/Header";
+import ModalWindow from "../sections/Modal/ModalWindow";
 import Principles from "../sections/Principles/Principles";
 import Struct from "../sections/Struct/Struct";
+import { RootState } from "@/store/store";
 
 export default function App() {
+    const isVisibleOverflow = useSelector(
+        (store: RootState) => store.modalSlice.visible
+    );
+
+    document.getElementsByTagName("body")[0].style.overflowY = isVisibleOverflow
+        ? "hidden"
+        : "auto";
     return (
         <>
             <Header></Header>
@@ -12,6 +21,7 @@ export default function App() {
             <Principles></Principles>
             {/* <Coins></Coins> */}
             <Struct></Struct>
+            <ModalWindow></ModalWindow>
         </>
     );
 }
