@@ -15,6 +15,15 @@
     width: 50vw;
     height: 70vh;
     background: darksalmon;
-    padding: 2vw;
+    padding: 3vw 2vw 2vw 2vw;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.modalWindowContainer__closeButton {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    font-weight: bold;
 }

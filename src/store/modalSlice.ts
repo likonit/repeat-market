@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice, current } from "@reduxjs/toolkit";
 
 interface modalStore {
     visible: boolean;
@@ -15,8 +15,11 @@ const modalSlice = createSlice({
         changeModalVisibility: function (state) {
             state.visible = !current(state).visible;
         },
+        setModalVisibility: function (state, action: PayloadAction<boolean>) {
+            state.visible = action.payload;
+        },
     },
 });
 
-export const { changeModalVisibility } = modalSlice.actions;
+export const { changeModalVisibility, setModalVisibility } = modalSlice.actions;
 export default modalSlice.reducer;

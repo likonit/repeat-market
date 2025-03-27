@@ -1,8 +1,9 @@
+import { APRInfo } from "@/react/types";
 import { CoinRowInfoAdvanced } from "./createWeights";
-import { stakeBybit } from "@/store/constants";
+import { StakeInfo, stakeBybit } from "@/store/constants";
 
 export interface StockCoinInfo extends CoinRowInfoAdvanced {
-    APR: number;
+    APR: APRInfo;
     coinValue: number;
     usdValue: number;
 }
@@ -37,7 +38,6 @@ export default function createStock(
     budget = initialBudget;
     i = 0;
 
-    console.log(limitedMarketCap);
     while (budget > 0) {
         const currentCoin = coins[i];
         const currWeight = currentCoin.marketCap / limitedMarketCap;
@@ -50,17 +50,22 @@ export default function createStock(
             break;
         }
 
-        const stakeInfo = stakeBybit.get(currentCoin.symbol);
+        const stakeInfo: StakeInfo | undefined = stakeBybit.get(
+            currentCoin.symbol
+        );
+
         stockResult.push({
             ...currentCoin,
             weight: currWeight,
             coinValue,
             usdValue: coinUSDvalue,
-            APR: stakeInfo
-                ? coinValue < stakeInfo.minStakeValue
-                    ? 0
-                    : stakeInfo.APR
-                : 0,
+            APR: !stakeInfo
+                ? { canStake: false }
+                : {
+                      canStake: true,
+                      minValue: stakeInfo.minStakeValue,
+                      value: stakeInfo.APR,
+                  },
         });
         i++;
     }

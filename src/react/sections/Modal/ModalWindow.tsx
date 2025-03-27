@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import * as style from "@/styles/Modal/modal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { changeModalVisibility } from "@/store/modalSlice";
+import { changeModalVisibility, setModalVisibility } from "@/store/modalSlice";
 
 export default function ModalWindow() {
     const { visible } = useSelector((store: RootState) => store.modalSlice);
@@ -10,13 +10,11 @@ export default function ModalWindow() {
     const container = useRef<HTMLDivElement>(null);
     const dispatch = useDispatch();
 
-    console.log(visible);
-
     useEffect(() => {
         function handleEscape(event: KeyboardEvent) {
             if (!visible) return;
             if (event.key === "Escape") {
-                dispatch(changeModalVisibility());
+                dispatch(setModalVisibility(false));
             }
         }
 
@@ -26,7 +24,7 @@ export default function ModalWindow() {
                 insideTarget.current &&
                 !insideTarget.current.contains(event.target as Node)
             ) {
-                dispatch(changeModalVisibility());
+                dispatch(setModalVisibility(false));
             }
         }
 
@@ -45,11 +43,21 @@ export default function ModalWindow() {
             style={!visible ? { display: "none" } : {}}
             ref={container}
         >
-            <div
-                className={style.modalWindowContainer__action}
-                id="modalWindow"
-                ref={insideTarget}
-            ></div>
+            <div style={{ position: "relative" }}>
+                <span
+                    className={style.modalWindowContainer__closeButton}
+                    onClick={() => {
+                        dispatch(setModalVisibility(false));
+                    }}
+                >
+                    ⨉
+                </span>
+                <div
+                    className={style.modalWindowContainer__action}
+                    id="modalWindow"
+                    ref={insideTarget}
+                ></div>
+            </div>
         </div>
     );
 }

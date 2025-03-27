@@ -1,3 +1,4 @@
+import TooltipPotral from "@/react/sections/Tooltip/TooltipPortal";
 import { StockCoinInfo } from "@/scripts/stock/createStock";
 import * as style from "@/styles/Struct/Stock/stocklist.module.css";
 
@@ -24,7 +25,20 @@ export default function StockCoinCard({ coin }: { coin: StockCoinInfo }) {
                 <p>{(coin.weight * 100).toFixed(2)}%</p>
             </div>
             <div>
-                <p>{coin.APR.toFixed(2)}% APR </p>
+                <p>
+                    {coin.APR.canStake ? (
+                        <>
+                            <p>{coin.APR.value?.toFixed(2) + "%"}</p>
+                            <TooltipPotral>
+                                <div style={{ width: 30, height: 30 }}>
+                                    min stake value: {coin.APR.minValue}
+                                </div>
+                            </TooltipPotral>
+                        </>
+                    ) : (
+                        "—"
+                    )}{" "}
+                </p>
             </div>
         </div>
     );

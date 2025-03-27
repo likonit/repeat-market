@@ -27,3 +27,9 @@ export interface VisualizationBlocksInfo {
     coins: StockCoinInfo[];
     marketCap: number;
 }
+
+export interface APRInfo {
+    value?: number;
+    canStake: boolean;
+    minValue?: number;
+}

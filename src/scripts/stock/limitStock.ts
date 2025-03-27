@@ -21,7 +21,7 @@ export default function limitStock(coins: StockCoinInfo[], limit: number) {
         name: "Другие",
         symbol: "Другие",
         imageLink: "",
-        APR: 0,
+        APR: { canStake: false },
         id: -1,
         coinValue: -1,
         usdValue: -1,
@@ -29,8 +29,6 @@ export default function limitStock(coins: StockCoinInfo[], limit: number) {
         marketCap: totalMarketCap,
         changePercent: -1,
     });
-
-    console.log(result);
 
     result.sort((a, b) => b.weight - a.weight);
 

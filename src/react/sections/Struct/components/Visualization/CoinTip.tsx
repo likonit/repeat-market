@@ -1,24 +1,14 @@
 import { StockCoinInfo } from "@/scripts/stock/createStock";
 
-export default function CoinTip({
-    coin,
-    x,
-    y,
-}: {
-    coin: StockCoinInfo;
-    x: number;
-    y: number;
-}) {
+export default function CoinTip({ coin }: { coin: StockCoinInfo }) {
     return (
         <div
             style={{
-                position: "fixed",
                 width: "50px",
                 height: "50px",
                 background: "#6F9CF6",
                 opacity: 0.9,
-                top: y - 60 + "px",
-                left: x - 25 + "px",
+                zIndex: -2,
             }}
         >
             {coin.imageLink.length > 0 ? (

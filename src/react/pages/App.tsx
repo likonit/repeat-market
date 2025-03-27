@@ -5,6 +5,7 @@ import ModalWindow from "../sections/Modal/ModalWindow";
 import Principles from "../sections/Principles/Principles";
 import Struct from "../sections/Struct/Struct";
 import { RootState } from "@/store/store";
+import Tooltip from "../sections/Tooltip/Tooltip";
 
 export default function App() {
     const isVisibleOverflow = useSelector(
@@ -22,6 +23,7 @@ export default function App() {
             {/* <Coins></Coins> */}
             <Struct></Struct>
             <ModalWindow></ModalWindow>
+            <Tooltip></Tooltip>
         </>
     );
 }
