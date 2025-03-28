@@ -4,6 +4,7 @@ import StockCoinCard from "./CoinCard";
 import { changeModalVisibility } from "@/store/modalSlice";
 import * as style from "@/styles/Struct/Stock/stocklist.module.css";
 import ModalWindowPotral from "@/react/sections/Modal/ModalWindowPortal";
+import { setTooltipZindex } from "@/store/tooltipSlice";
 
 export default function StockDescription() {
     const { stockList } = useSelector(
@@ -16,6 +17,7 @@ export default function StockDescription() {
             <div>
                 <button
                     onClick={() => {
+                        dispatch(setTooltipZindex(2));
                         dispatch(changeModalVisibility());
                     }}
                 >

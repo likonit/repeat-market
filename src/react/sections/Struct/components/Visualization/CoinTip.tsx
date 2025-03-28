@@ -8,7 +8,6 @@ export default function CoinTip({ coin }: { coin: StockCoinInfo }) {
                 height: "50px",
                 background: "#6F9CF6",
                 opacity: 0.9,
-                zIndex: -2,
             }}
         >
             {coin.imageLink.length > 0 ? (

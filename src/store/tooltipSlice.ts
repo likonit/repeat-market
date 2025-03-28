@@ -6,6 +6,7 @@ interface tooltipStore {
         x: number;
         y: number;
     };
+    zIndex: number;
 }
 
 const initialState: tooltipStore = {
@@ -14,6 +15,7 @@ const initialState: tooltipStore = {
         x: 0,
         y: 0,
     },
+    zIndex: -3,
 };
 
 const tooltipSlice = createSlice({
@@ -29,8 +31,12 @@ const tooltipSlice = createSlice({
         ) {
             state.correction = action.payload;
         },
+        setTooltipZindex: function (state, action: PayloadAction<number>) {
+            state.zIndex = action.payload;
+        },
     },
 });
 
-export const { setTooltipVisibility, setCorrection } = tooltipSlice.actions;
+export const { setTooltipVisibility, setCorrection, setTooltipZindex } =
+    tooltipSlice.actions;
 export default tooltipSlice.reducer;
