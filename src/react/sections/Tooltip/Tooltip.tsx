@@ -7,7 +7,7 @@ export default function Tooltip() {
         (store: RootState) => store.tooltipSlice
     );
     const [pos, setPos] = useState({ x: 0, y: 0 });
-    const FPS = 1000 / 90;
+    const FPS = 1000 / 120;
 
     let lastTimeChecked = new Date().getTime();
 

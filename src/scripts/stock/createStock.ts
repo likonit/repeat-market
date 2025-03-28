@@ -65,6 +65,8 @@ export default function createStock(
                       canStake: true,
                       minValue: stakeInfo.minStakeValue,
                       value: stakeInfo.APR,
+                      dayToTake: stakeInfo.daysToTake,
+                      bonus: stakeInfo.bonus,
                   },
         });
         i++;

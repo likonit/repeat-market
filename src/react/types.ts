@@ -32,4 +32,11 @@ export interface APRInfo {
     value?: number;
     canStake: boolean;
     minValue?: number;
+    dayToTake?: number;
+    bonus?:
+        | {
+              to: number;
+              APR: number;
+          }
+        | undefined;
 }
