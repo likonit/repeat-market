@@ -1,7 +1,6 @@
-import TooltipPotral from "@/react/sections/Tooltip/TooltipPortal";
 import { StockCoinInfo } from "@/scripts/stock/createStock";
 import * as style from "@/styles/Struct/Stock/stocklist.module.css";
-import CoinCardAPR from "./CoinCardAPR";
+import CoinCardAPR from "./APR_Block/CoinCardAPR";
 
 export default function StockCoinCard({ coin }: { coin: StockCoinInfo }) {
     return (

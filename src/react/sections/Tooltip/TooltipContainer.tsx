@@ -8,22 +8,22 @@ import { useDispatch } from "react-redux";
 
 export default function TooltipContainer({
     children,
-    stylesInfo,
+    zIndex,
     mouseInAction,
     mouseOutAction,
 }: {
     children: React.ReactElement;
-    stylesInfo: { x: number; y: number; zIndex: number };
+    zIndex: number;
     mouseInAction: (...args: any) => any;
     mouseOutAction: (...args: any) => any;
 }) {
     const target = useRef<HTMLDivElement>(null);
 
     const dispatch = useDispatch();
+
     // что-то типа троттлинга.
     useEffect(() => {
-        dispatch(setCorrection({ x: stylesInfo.x, y: stylesInfo.y }));
-        dispatch(setTooltipZindex(stylesInfo.zIndex));
+        dispatch(setTooltipZindex(zIndex));
 
         function handleMouseIn() {
             dispatch(setTooltipVisibility(true));
