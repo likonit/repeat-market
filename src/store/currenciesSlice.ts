@@ -12,10 +12,12 @@ import {
 
 const initialState: {
     coinsList: CoinRowInfo[];
+    totalMarketCap: number;
     stockList: StockCoinInfo[];
 } = {
     coinsList: [],
     stockList: [],
+    totalMarketCap: 0,
 };
 
 export const fetchCurrencies = createAsyncThunk("cyrrencies/get", async () => {
@@ -48,6 +50,10 @@ const currenciesSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchCurrencies.fulfilled, (state, action) => {
             state.coinsList = action.payload;
+            state.totalMarketCap = action.payload.reduce(
+                (sum, item) => (sum += item.marketCap),
+                0
+            );
         });
     },
 });

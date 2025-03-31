@@ -6,6 +6,7 @@ import { fetchCurrencies } from "@/store/currenciesSlice";
 import MarketVisualization from "./components/Visualization/MarketVisualization";
 import StockDescription from "./components/StockDescription/StockDescription";
 import Download from "./components/Download/Download";
+import PartAnalyze from "./components/PartAnalyze";
 
 export default function Struct() {
     const [visualizationVisible, setVisualizationVisible] = useState(false);
@@ -20,6 +21,7 @@ export default function Struct() {
     let visalizedBlock = visualizationVisible ? (
         <div>
             <MarketVisualization></MarketVisualization>
+            <PartAnalyze></PartAnalyze>
             <StockDescription></StockDescription>
             <Download></Download>
         </div>

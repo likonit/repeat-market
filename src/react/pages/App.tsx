@@ -6,6 +6,8 @@ import Principles from "../sections/Principles/Principles";
 import Struct from "../sections/Struct/Struct";
 import { RootState } from "@/store/store";
 import Tooltip from "../sections/Tooltip/Tooltip";
+import * as style from "@/styles/bg.module.css";
+import "@/styles/index.module.css";
 
 export default function App() {
     const isVisibleOverflow = useSelector(
@@ -17,11 +19,14 @@ export default function App() {
         : "auto";
     return (
         <>
-            <Header></Header>
-            <About></About>
-            <Principles></Principles>
-            {/* <Coins></Coins> */}
-            <Struct></Struct>
+            <div className={style.bg_header_about}>
+                <Header></Header>
+                <About></About>
+            </div>
+            <div className={style.bg_main}>
+                <Principles></Principles>
+                <Struct></Struct>
+            </div>
             <ModalWindow></ModalWindow>
             <Tooltip></Tooltip>
         </>

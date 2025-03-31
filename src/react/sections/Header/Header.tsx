@@ -1,4 +1,5 @@
 import MenuElement from "./components/MenuElement";
+import * as style from "@/styles/header.module.css";
 
 export default function Header() {
     const links = [
@@ -21,9 +22,10 @@ export default function Header() {
     ];
 
     return (
-        <header>
-            <div>
-                <span>RepeatMarket</span>
+        <header className={style.header_block}>
+            <div className={style.header_block__logo}>
+                <span>Repeat</span>
+                <span>Market</span>
             </div>
             <nav>
                 {links.map((item, i) => {

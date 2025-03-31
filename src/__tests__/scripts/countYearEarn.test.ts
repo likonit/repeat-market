@@ -26,7 +26,36 @@ describe("countYearEarn", () => {
         marketCap: 1000,
     };
 
+    const BTC: StockCoinInfo = {
+        symbol: "BTC",
+        APR: {
+            value: 10,
+            canStake: true,
+            dayToTake: 1,
+            minValue: 0.001,
+            bonus: {
+                APR: 20,
+                to: 0.005,
+            },
+        },
+        coinValue: 0.001,
+        usdValue: 1000,
+        weight: 100,
+        imageLink: "",
+        id: 1,
+        name: "Bitcoin",
+        price: 1,
+        changePercent: 0.01,
+        marketCap: 1000,
+    };
+
     test("Проверка рассчетов доходности стейкинга с бонусом", () => {
+        const totalAPR = countYearEarn(BTC);
+        console.log(totalAPR);
+        expect(totalAPR).toBeGreaterThan(10);
+    });
+
+    test("Проверка рассчетов доходности стейкинга с бонусом, BTC", () => {
         const totalAPR = countYearEarn(coin);
         expect(totalAPR).toBeGreaterThan(10);
     });
@@ -63,6 +92,13 @@ describe("countYearEarn", () => {
 
     test("Проверка, что на стейкинг нельзя положить, т.к. мин. значение не достигнуто", () => {
         coin.APR.minValue = 1001;
+
+        const totalAPR = countYearEarn(coin);
+        expect(totalAPR).toBe(0);
+    });
+
+    test("Проверка, что на стейкинг нельзя положить, т.к. мин. значение не достигнуто", () => {
+        BTC.APR.minValue = 1001;
 
         const totalAPR = countYearEarn(coin);
         expect(totalAPR).toBe(0);

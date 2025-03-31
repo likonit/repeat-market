@@ -17,11 +17,11 @@ function isStakable(coin: APRInfo): coin is {
 
 // функция расчёта доходности - то есть работа сложного процента
 export default function countYearEarn(coin: StockCoinInfo): number {
-    let currentValue = coin.usdValue;
+    // считаем в выражении монеты
+    let currentValue = coin.coinValue;
     console.log(currentValue, coin.symbol);
     if (isStakable(coin.APR)) {
-        // учитываем цену в USDT
-        if (coin.APR.minValue * coin.price > currentValue) return 0;
+        if (coin.APR.minValue > currentValue) return 0;
 
         let plusValue = 0;
         for (let i = 0; i < 365; i += coin.APR.dayToTake) {
@@ -52,6 +52,6 @@ export default function countYearEarn(coin: StockCoinInfo): number {
 
         currentValue += plusValue;
 
-        return (currentValue / coin.usdValue - 1) * 100;
+        return (currentValue / coin.coinValue - 1) * 100;
     } else return 0;
 }

@@ -37,6 +37,10 @@ export default function config(env: {
                     use: ["style-loader", "css-loader"],
                     exclude: "/node_modules/",
                 },
+                {
+                    test: /\.(png|jpg|svg|ttf)$/,
+                    type: "asset/resource",
+                },
             ],
         },
         resolve: {

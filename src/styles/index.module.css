@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/Roboto-VariableFont.ttf") format("truetype");
+}
+
+body {
+    background: #11011e;
+    font-family: Roboto;
+    overflow-x: hidden;
+}
+
+:root {
+    --main-text-color: #ecf1f0;
+    --main-text-size: 16px;
+    --selected-text-color: #0fae96;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../assets/fonts/Raleway-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Raleway Bold";
+    src: url("../assets/fonts/Raleway-Bold.ttf") format("truetype");
+}

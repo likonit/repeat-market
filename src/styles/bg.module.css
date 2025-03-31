@@ -1,0 +1,9 @@
+.bg_header_about {
+    background: url("../assets/bh-header+about.svg") no-repeat;
+    background-size: 100vw;
+}
+
+.bg_main {
+    background: url("../assets/bg-main.svg") no-repeat;
+    background-size: 100vw;
+}

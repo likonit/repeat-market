@@ -1,6 +1,6 @@
 import { APRInfo } from "@/react/types";
 import { CoinRowInfoAdvanced } from "./createWeights";
-import { StakeInfo, stakeBybit } from "@/store/constants";
+import { StakeInfo, stakeBybit } from "@/scripts/constants/constants";
 
 export interface StockCoinInfo extends CoinRowInfoAdvanced {
     APR: APRInfo;

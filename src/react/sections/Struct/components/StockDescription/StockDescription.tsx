@@ -26,11 +26,22 @@ export default function StockDescription() {
             </div>
             <ModalWindowPotral>
                 <div className={style.stocklist}>
-                    {stockList.map((item, i) => {
-                        return (
-                            <StockCoinCard key={i} coin={item}></StockCoinCard>
-                        );
-                    })}
+                    <div className={style.stocklist__headers}>
+                        <h3>Лого</h3>
+                        <h3>Информация</h3>
+                        <h3>Доля</h3>
+                        <h3>Доходность</h3>
+                    </div>
+                    <div>
+                        {stockList.map((item, i) => {
+                            return (
+                                <StockCoinCard
+                                    key={i}
+                                    coin={item}
+                                ></StockCoinCard>
+                            );
+                        })}
+                    </div>
                 </div>
             </ModalWindowPotral>
         </div>

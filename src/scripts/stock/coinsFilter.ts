@@ -1,5 +1,9 @@
 import { CoinRowInfo } from "@/react/types";
-import { memeCoins, stableCoins, stakeBybit } from "@/store/constants";
+import {
+    memeCoins,
+    stableCoins,
+    stakeBybit,
+} from "@/scripts/constants/constants";
 
 // функция фильтрации монет по заданым чекбоксам.
 export default function coinsFilter(

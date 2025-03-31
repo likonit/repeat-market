@@ -22,7 +22,7 @@ export default function CoinCardAPRHoverBlock({
         },
         {
             needRender: earnPercent !== 0,
-            paragraphName: "Доход сложного процента",
+            paragraphName: "Бонус+процент",
             mini: true,
             paragraphText:
                 "+" +

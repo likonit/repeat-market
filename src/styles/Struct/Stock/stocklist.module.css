@@ -19,6 +19,11 @@
     align-items: center;
 }
 
+.stocklist__headers {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr 2fr;
+}
+
 .stocklist__coinCard:last-child {
     border-bottom: none;
 }
