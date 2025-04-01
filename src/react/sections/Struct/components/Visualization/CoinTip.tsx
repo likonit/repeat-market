@@ -1,15 +1,9 @@
 import { StockCoinInfo } from "@/scripts/stock/createStock";
+import * as style from "@/styles/Struct/Visualization/marketCapBlock.module.css";
 
 export default function CoinTip({ coin }: { coin: StockCoinInfo }) {
     return (
-        <div
-            style={{
-                width: "50px",
-                height: "50px",
-                background: "#6F9CF6",
-                opacity: 0.9,
-            }}
-        >
+        <div className={style.marketCapTooltip}>
             {coin.imageLink.length > 0 ? (
                 <p>
                     <img src={coin.imageLink} width={30} height={30}></img>
@@ -17,7 +11,7 @@ export default function CoinTip({ coin }: { coin: StockCoinInfo }) {
             ) : (
                 <></>
             )}
-            <p style={{ color: "white" }}>{(coin.weight * 100).toFixed(2)}%</p>
+            <p>{(coin.weight * 100).toFixed(2)}%</p>
         </div>
     );
 }

@@ -32,7 +32,7 @@ export default function Struct() {
     );
 
     return (
-        <section className={style.struct}>
+        <section className={style.struct} id="struct">
             <h1>Давайте составим портфель</h1>
             <StructInputBlock
                 setVisualizationVisible={setVisualizationVisible}

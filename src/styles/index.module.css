@@ -46,3 +46,8 @@ button {
     font-weight: 600;
     font-size: var(--main-text-size);
 }
+
+button a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}

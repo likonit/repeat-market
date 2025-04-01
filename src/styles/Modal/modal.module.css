@@ -24,7 +24,15 @@
 
 .modalWindowContainer__closeButton {
     position: absolute;
-    top: 1vw;
+    top: 0.5vw;
     right: 1vw;
     font-weight: bold;
+    font-size: 22px;
+    color: #e1e1e1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modalWindowContainer__closeButton:hover {
+    transition: 0.3s;
 }

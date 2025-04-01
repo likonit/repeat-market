@@ -12,7 +12,7 @@ export default function Tooltip() {
 
     useEffect(() => {
         const FPS_visible = 1000 / 120;
-        const FPS_invisible = 1000 / 2;
+        const FPS_invisible = 1000 / 30;
 
         function handleMouseMove(event: MouseEvent) {
             // if (!visible) return;

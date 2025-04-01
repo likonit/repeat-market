@@ -12,12 +12,22 @@
     z-index: 1;
 }
 
-.header_block nav a {
+.header_block nav span {
     font-family: "Raleway";
-    color: var(--main-text-color);
-    text-decoration: none;
     font-size: var(--main-text-size);
     padding: 10px;
+}
+
+.header_block nav span a {
+    text-decoration: none;
+}
+
+.header_block__no_activeLink a {
+    color: var(--main-text-color);
+}
+
+.header_block__activeLink a {
+    color: var(--selected-text-color);
 }
 
 .header_block__logo {

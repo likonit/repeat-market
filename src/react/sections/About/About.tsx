@@ -3,7 +3,7 @@ import * as style from "@/styles/About/about.module.css";
 
 export default function About() {
     return (
-        <section className={style.about}>
+        <section className={style.about} id="about">
             <h1>Составьте прибыльный портфель своей мечты</h1>
             <div className={style.about__text}>
                 <p>

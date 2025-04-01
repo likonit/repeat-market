@@ -30,7 +30,7 @@ export default function Principles() {
         },
     ];
     return (
-        <section className={style.principles}>
+        <section className={style.principles} id="principles">
             <h1>Наши принципы</h1>
             <div className={style.principles__cardsContainer}>
                 <div className={style.principles__cardsContainer__grid}>

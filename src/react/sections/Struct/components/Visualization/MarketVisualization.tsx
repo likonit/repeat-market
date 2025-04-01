@@ -9,7 +9,7 @@ export default function MarketVisualization() {
         limitStock(store.currenciesSlice.stockList, 12)
     );
     return (
-        <div className={style.marketCap}>
+        <div className={style.marketCap} id="visualization">
             <div className={style.marketCapBlock}>
                 <VisualizationGridBlock
                     type={true}

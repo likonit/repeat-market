@@ -2,6 +2,7 @@ import { createStockList } from "@/store/currenciesSlice";
 import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import * as style from "@/styles/Struct/Visualization/block.module.css";
+import Link from "../../Header/components/LinkElement";
 
 export default function StructButton({
     setVisualizationVisible,
@@ -26,7 +27,7 @@ export default function StructButton({
                     setVisualizationVisible(true);
                 }}
             >
-                Составить портфель
+                <Link name="Составить портфель" link="#visualization"></Link>
             </button>
         </div>
     );

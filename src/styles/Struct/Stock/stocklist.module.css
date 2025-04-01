@@ -13,12 +13,13 @@
 
 .stocklist__coinCard {
     display: grid;
-    grid-template-columns: 1fr 4fr 2fr 3fr;
+    grid-template-columns: 2fr 4fr 2fr 2fr;
     padding: 1vh 0;
     border-bottom: 1px solid var(--modal-borders-color);
     align-items: center;
     color: #e1e1e1;
     transition: 0.3s;
+    justify-content: center;
 }
 
 .stocklist__coinCard:hover {
@@ -28,7 +29,19 @@
 
 .stocklist__headers {
     display: grid;
-    grid-template-columns: 1fr 4fr 2fr 3fr;
+    grid-template-columns: 2fr 4fr 2fr 2fr;
+}
+
+.stocklist__headers h3 {
+    text-align: center;
+    font-family: "Raleway";
+    font-size: 21px;
+    padding: 20px 0;
+    color: white;
+}
+
+.stocklist__headers h3:nth-child(2) {
+    text-align: start;
 }
 
 .stocklist__coinCard:last-child {
@@ -40,19 +53,17 @@
     padding: 0 0 7vh 0;
 }
 
-.stocklist__coinCard__imageBlock {
+.stocklist__coinCard__imageBlock,
+.stocklist__coinCard__mainInfo,
+.stocklist__coinCard__weight,
+.stocklist__coinCard__APR {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .stocklist__coinCard__mainInfo {
-    display: flex;
-    align-items: center;
     justify-content: start;
-}
-
-.stocklist__coinCard__weight {
 }
 
 .stocklist__coinCard__APR span {

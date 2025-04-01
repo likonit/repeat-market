@@ -8,6 +8,7 @@ import { RootState } from "@/store/store";
 import Tooltip from "../sections/Tooltip/Tooltip";
 import * as style from "@/styles/bg.module.css";
 import "@/styles/index.module.css";
+import { useEffect } from "react";
 
 export default function App() {
     const isVisibleOverflow = useSelector(
@@ -17,6 +18,20 @@ export default function App() {
     document.getElementsByTagName("body")[0].style.overflowY = isVisibleOverflow
         ? "hidden"
         : "auto";
+
+    // useEffect(() => {
+    //     const hash = window.location.hash.slice(1);
+    //     if (hash) {
+    //         const element = document.getElementById(hash);
+    //         if (element) {
+    //             element.scrollIntoView({
+    //                 behavior: "smooth",
+    //                 block: hash == "visualization" ? "nearest" : "center",
+    //             });
+    //         }
+    //     }
+    // }, []);
+
     return (
         <>
             <div className={style.bg_header_about}>
