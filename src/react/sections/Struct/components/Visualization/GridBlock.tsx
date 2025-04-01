@@ -29,6 +29,7 @@ export default function VisualizationGridBlock({
         <div style={firstFR < 100 ? styling : {}}>
             <MarketVisualizationCoin
                 coin={currentCoin}
+                index={info.index}
             ></MarketVisualizationCoin>
             {info.index + 1 != info.coins.length ? (
                 <div>

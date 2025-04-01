@@ -6,6 +6,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid #230a38;
+    background: #11011e;
+    opacity: 0.9;
+    z-index: 1;
 }
 
 .header_block nav a {
@@ -17,7 +21,8 @@
 }
 
 .header_block__logo {
-    font-family: "Raleway Bold";
+    font-family: "Raleway";
+    font-weight: bold;
     margin-right: 10vw;
     font-size: 24px;
     color: white;

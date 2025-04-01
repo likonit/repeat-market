@@ -7,6 +7,8 @@ import MarketVisualization from "./components/Visualization/MarketVisualization"
 import StockDescription from "./components/StockDescription/StockDescription";
 import Download from "./components/Download/Download";
 import PartAnalyze from "./components/PartAnalyze";
+import * as style from "@/styles/Struct/struct.module.css";
+import * as styleVisualization from "@/styles/Struct/Visualization/marketCapBlock.module.css";
 
 export default function Struct() {
     const [visualizationVisible, setVisualizationVisible] = useState(false);
@@ -30,8 +32,8 @@ export default function Struct() {
     );
 
     return (
-        <section>
-            <h1>Составить диверсифицированный портфель</h1>
+        <section className={style.struct}>
+            <h1>Давайте составим портфель</h1>
             <StructInputBlock
                 setVisualizationVisible={setVisualizationVisible}
             ></StructInputBlock>

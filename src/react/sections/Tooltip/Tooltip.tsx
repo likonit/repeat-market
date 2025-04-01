@@ -7,14 +7,19 @@ export default function Tooltip() {
         (store: RootState) => store.tooltipSlice
     );
     const [pos, setPos] = useState({ x: 0, y: 0 });
-    const FPS = 1000 / 120;
 
     let lastTimeChecked = new Date().getTime();
 
     useEffect(() => {
+        const FPS_visible = 1000 / 120;
+        const FPS_invisible = 1000 / 2;
+
         function handleMouseMove(event: MouseEvent) {
             // if (!visible) return;
-            if (new Date().getTime() - lastTimeChecked > FPS) {
+            if (
+                new Date().getTime() - lastTimeChecked >
+                (visible ? FPS_visible : FPS_invisible)
+            ) {
                 lastTimeChecked = new Date().getTime();
                 setPos({ x: event.clientX, y: event.clientY });
             }

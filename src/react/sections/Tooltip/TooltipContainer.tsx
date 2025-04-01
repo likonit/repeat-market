@@ -44,5 +44,5 @@ export default function TooltipContainer({
         };
     }, []);
 
-    return <div ref={target}>{children}</div>;
+    return <span ref={target}>{children}</span>;
 }

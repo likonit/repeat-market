@@ -1,0 +1,95 @@
+.visualizationBlock__container {
+    display: flex;
+    justify-content: center;
+}
+
+.visualizationBlock h3 {
+    font-size: 26px;
+    color: var(--main-text-color);
+    text-align: start;
+    margin: 3vh 0;
+    font-family: "Raleway";
+}
+
+.visualizationBlock h3 span {
+    font-size: 12px;
+}
+
+.visualizationBlock__container__block {
+    margin: 3vh var(--borders-margin);
+}
+
+.visualizationBlock__usdInput {
+    background: none;
+    border: 2px solid #513872;
+    padding: 10px;
+    box-shadow: 0;
+    border-radius: 6px;
+    color: var(--main-text-color);
+    width: 25vw;
+    display: block;
+    outline: none;
+    font-size: 18px;
+}
+
+.visualizationBlock__usdInput:focus {
+    border: 2px solid #7551a5;
+}
+
+.visualizationBlock__usdInput::placeholder {
+    font-weight: 450;
+    font-family: "Raleway";
+    color: #999c9b;
+}
+
+.visualizationBlock__container__checkboxes {
+    margin: 1vh 0;
+}
+
+.visualizationBlock__container__checkboxes label {
+    font-size: 17px;
+    color: #dde1e0;
+    font-family: "Raleway";
+    font-weight: 450;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.visualizationBlock__container__checkboxes label span {
+    display: inline-block;
+    margin-left: 9px;
+}
+
+.struct__button {
+    text-align: center;
+    padding: 10vh 0;
+}
+
+.visualizationBlock__container__checkboxes input {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 3px;
+    display: grid;
+    place-content: center;
+    border: none;
+}
+
+.visualizationBlock__container__checkboxes input::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #7207ca;
+    background-color: CanvasText;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.visualizationBlock__container__checkboxes input:checked::before {
+    transform: scale(1);
+}

@@ -2,6 +2,7 @@ import { goodLevels } from "@/scripts/constants/cssConstants";
 import { RootState } from "@/store/store";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import * as style from "@/styles/Struct/Stock/part.module.css";
 
 export default function PartAnalyze() {
     const { stockList, totalMarketCap } = useSelector(
@@ -26,7 +27,7 @@ export default function PartAnalyze() {
         setStockMarketCap(stockMarketCap);
     }, [stockList]);
     return (
-        <article>
+        <article className={style.partBlock}>
             <p>
                 Ваш портфель покрывает{" "}
                 <span style={{ color }}>

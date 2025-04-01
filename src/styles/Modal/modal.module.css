@@ -12,13 +12,14 @@
 }
 
 .modalWindowContainer__action {
-    width: 50vw;
-    height: 70vh;
-    background: darksalmon;
+    width: 70vw;
+    height: 80vh;
+    background: #160622;
     padding: 3vw 2vw 2vw 2vw;
     border-radius: 15px;
     display: flex;
     align-items: center;
+    box-shadow: 0 0 10px #3d204f;
 }
 
 .modalWindowContainer__closeButton {

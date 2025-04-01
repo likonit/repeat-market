@@ -9,18 +9,20 @@ export default function MarketVisualization() {
         limitStock(store.currenciesSlice.stockList, 12)
     );
     return (
-        <div className={style.marketCapBlock}>
-            <VisualizationGridBlock
-                type={true}
-                info={{
-                    index: 0,
-                    coins: limitedStockList,
-                    marketCap: limitedStockList.reduce(
-                        (sum, item) => (sum += item.marketCap),
-                        0
-                    ),
-                }}
-            ></VisualizationGridBlock>
+        <div className={style.marketCap}>
+            <div className={style.marketCapBlock}>
+                <VisualizationGridBlock
+                    type={true}
+                    info={{
+                        index: 0,
+                        coins: limitedStockList,
+                        marketCap: limitedStockList.reduce(
+                            (sum, item) => (sum += item.marketCap),
+                            0
+                        ),
+                    }}
+                ></VisualizationGridBlock>
+            </div>
         </div>
     );
 }

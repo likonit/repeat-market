@@ -1,0 +1,44 @@
+.principles h1 {
+    padding: 10vh 0 20vh 0;
+}
+
+.principles__cardsContainer {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+
+.principles__cardsContainer__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.principles__cardsContainer__grid__card {
+    width: 15vw;
+    background: #1b072b;
+    border: 1px;
+    border: 1px solid #260a3d;
+    padding: 2vw;
+    border-radius: 18px;
+    margin: 0 12px;
+    opacity: 0.95;
+}
+
+.principles__cardsContainer__grid__card h3 {
+    font-weight: 600;
+    font-family: "Raleway";
+    font-size: 20px;
+    color: white;
+    margin: 2vh 0;
+}
+
+.principles__cardsContainer__grid__card p {
+    font-family: "Roboto";
+    font-size: 16px;
+    color: #b6b6b6;
+}
+
+.principles__cardsContainer__grid__card img {
+    width: var(--icons-width);
+    height: var(--icons-width);
+}

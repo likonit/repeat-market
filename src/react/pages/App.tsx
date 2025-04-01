@@ -22,9 +22,9 @@ export default function App() {
             <div className={style.bg_header_about}>
                 <Header></Header>
                 <About></About>
+                <Principles></Principles>
             </div>
             <div className={style.bg_main}>
-                <Principles></Principles>
                 <Struct></Struct>
             </div>
             <ModalWindow></ModalWindow>

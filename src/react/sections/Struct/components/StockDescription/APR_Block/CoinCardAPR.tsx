@@ -50,7 +50,7 @@ export default function CoinCardAPR({ coin }: { coin: StockCoinInfo }) {
                     setVisible(false);
                 }}
             >
-                <a>{yearEarnings.toFixed(3) + "%"}</a>
+                <span>{yearEarnings.toFixed(3) + "%"}</span>
             </TooltipContainer>
             {visible && (
                 <TooltipPotral>

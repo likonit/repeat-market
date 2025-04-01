@@ -3,6 +3,7 @@ import StructCheckboxBlock from "./CheckboxBlock";
 import { useDispatch } from "react-redux";
 import { changeInput } from "@/store/inputSlice";
 import StructButton from "./Button";
+import * as style from "@/styles/Struct/Visualization/block.module.css";
 
 export default function StructInputBlock({
     setVisualizationVisible,
@@ -26,25 +27,35 @@ export default function StructInputBlock({
     ];
 
     return (
-        <div>
-            <h3>Сколько $ вы готовы вложить?</h3>
-            <input
-                type="number"
-                placeholder="$$$"
-                onChange={(event) => {
-                    dispatch(changeInput(event.currentTarget.value));
-                }}
-            />
-            <div>
-                {checkBoxes.map((item, i) => {
-                    return (
-                        <StructCheckboxBlock
-                            key={i}
-                            info={item}
-                            index={i as 0 | 1 | 2}
-                        ></StructCheckboxBlock>
-                    );
-                })}
+        <div className={style.visualizationBlock}>
+            <div className={style.visualizationBlock__container}>
+                <div className={style.visualizationBlock__container__block}>
+                    <h3>
+                        Какую сумму вы готовы вложить? <span>(в USD)</span>
+                    </h3>
+                    <input
+                        className={style.visualizationBlock__usdInput}
+                        type="number"
+                        placeholder="Введите сумму"
+                        onChange={(event) => {
+                            dispatch(changeInput(event.currentTarget.value));
+                        }}
+                    />
+                </div>
+                <div className={style.visualizationBlock__container__block}>
+                    <h3>Отфильтруйте монеты</h3>
+                    <div>
+                        {checkBoxes.map((item, i) => {
+                            return (
+                                <StructCheckboxBlock
+                                    key={i}
+                                    info={item}
+                                    index={i as 0 | 1 | 2}
+                                ></StructCheckboxBlock>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
             <StructButton
                 setVisualizationVisible={setVisualizationVisible}

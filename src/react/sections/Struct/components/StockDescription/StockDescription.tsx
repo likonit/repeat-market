@@ -14,14 +14,14 @@ export default function StockDescription() {
 
     return (
         <div>
-            <div>
+            <div className={style.button_block}>
                 <button
                     onClick={() => {
                         dispatch(setTooltipZindex(2));
                         dispatch(changeModalVisibility());
                     }}
                 >
-                    Показать портфель
+                    Посмотреть составленный портфель
                 </button>
             </div>
             <ModalWindowPotral>

@@ -8,10 +8,12 @@ export default function About() {
             <div className={style.about__text}>
                 <p>
                     RepeatMarket поможет составить диверсифицированный портфель,
-                    повторяющий 99% рынка даже с капиталом в 100$.
+                    повторяющий 99% рынка. Достаточно капитала в 500$.
                 </p>
             </div>
-            <Button></Button>
+            <div className={style.about__buttonContainer}>
+                <Button></Button>
+            </div>
         </section>
     );
 }

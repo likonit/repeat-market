@@ -1,0 +1,7 @@
+.partBlock {
+    text-align: center;
+    padding: 10vh 0;
+    font-size: 26px;
+    color: var(--main-text-color);
+    font-weight: bold;
+}

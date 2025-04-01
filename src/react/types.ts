@@ -1,10 +1,9 @@
 import { StockCoinInfo } from "@/scripts/stock/createStock";
-import React from "react";
 
 export interface PrinciplesCardInfo {
     header: string;
     text: string;
-    icon: React.ReactElement;
+    icon: string;
 }
 
 export interface CoinRowInfo {

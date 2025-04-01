@@ -9,8 +9,10 @@ import TooltipContainer from "@/react/sections/Tooltip/TooltipContainer";
 
 export default function MarketVisualizationCoin({
     coin,
+    index,
 }: {
     coin: StockCoinInfo;
+    index: number;
 }) {
     const [inblock, setInblock] = useState(false);
     const dispatch = useDispatch();
@@ -26,7 +28,7 @@ export default function MarketVisualizationCoin({
     return (
         <div className={style.marketCapBlock__info_element}>
             <TooltipContainer
-                zIndex={-3}
+                zIndex={0}
                 mouseInAction={() => {
                     dispatch(setCorrection({ x: -25, y: -60 }));
                     setInblock(true);
@@ -43,7 +45,14 @@ export default function MarketVisualizationCoin({
                     ) : (
                         <></>
                     )}
-                    <div>
+                    <div
+                        className={style.marketCapBlock__info_element__text}
+                        style={{
+                            background: `rgb(${15 + index * 5},${
+                                194 - index * 6
+                            },116)`,
+                        }}
+                    >
                         <span>{coin.symbol}</span>
                     </div>
                 </>

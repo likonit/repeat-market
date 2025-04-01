@@ -1,12 +1,5 @@
 .about {
-    padding: 20vh 0;
-}
-
-.about h1 {
-    font-size: 44px;
-    text-align: center;
-    font-family: "Raleway Bold";
-    color: white;
+    padding: 30vh 0 20vh 0;
 }
 
 .about__text {
@@ -21,4 +14,9 @@
 
 .about__text p {
     max-width: 50%;
+}
+
+.about__buttonContainer {
+    margin: 3vh 0;
+    text-align: center;
 }

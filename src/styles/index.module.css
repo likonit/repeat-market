@@ -18,14 +18,31 @@ body {
     --main-text-color: #ecf1f0;
     --main-text-size: 16px;
     --selected-text-color: #0fae96;
+    --icons-width: 64px;
+    --borders-margin: 3vw;
 }
 
 @font-face {
     font-family: "Raleway";
-    src: url("../assets/fonts/Raleway-Medium.ttf") format("truetype");
+    src: url("../assets/fonts/Raleway-VariableFont.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "Raleway Bold";
-    src: url("../assets/fonts/Raleway-Bold.ttf") format("truetype");
+h1 {
+    font-size: 44px;
+    color: var(--main-text-color);
+    font-family: "Raleway";
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+    border: 0;
+    box-shadow: 0;
+    background: var(--selected-text-color);
+    color: var(--main-text-color);
+    border-radius: 10px;
+    padding: 16px 24px;
+    font-family: "Raleway";
+    font-weight: 600;
+    font-size: var(--main-text-size);
 }
