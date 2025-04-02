@@ -4,7 +4,7 @@ import * as XLSX from "xlsx";
 export default function DonwloadExcel({ coins }: { coins: StockCoinInfo[] }) {
     return (
         <div>
-            <button
+            <a
                 onClick={() => {
                     const headers = [
                         {
@@ -44,8 +44,9 @@ export default function DonwloadExcel({ coins }: { coins: StockCoinInfo[] }) {
                     saveAs(blob, "stock.xlsx");
                 }}
             >
-                Скачать портфель в Excel
-            </button>
+                Скачать портфель в{" "}
+                <span style={{ color: "#209E62" }}>Excel</span>
+            </a>
         </div>
     );
 }

@@ -20,14 +20,24 @@
 
 .header_block nav span a {
     text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 2px 0;
 }
 
 .header_block__no_activeLink a {
     color: var(--main-text-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.header_block__no_activeLink a:hover {
+    transition: 0.3s;
+    color: #10ad98;
 }
 
 .header_block__activeLink a {
     color: var(--selected-text-color);
+    border-bottom: 1px solid var(--selected-text-color);
 }
 
 .header_block__logo {

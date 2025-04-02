@@ -18,7 +18,9 @@ export default function CoinCardAPRHoverBlock({
         {
             paragraphName: "APR",
             needRender: true,
-            paragraphText: coin.APR.value?.toFixed(3) ?? "",
+            paragraphText: coin.APR.value
+                ? coin.APR.value.toFixed(3) + "%"
+                : "",
         },
         {
             needRender: earnPercent !== 0,

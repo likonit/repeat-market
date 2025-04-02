@@ -2,7 +2,7 @@ import { createStockList } from "@/store/currenciesSlice";
 import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import * as style from "@/styles/Struct/Visualization/block.module.css";
-import Link from "../../Header/components/LinkElement";
+import smoothScrollTo from "@/scripts/helpers/dom/scrollToElement";
 
 export default function StructButton({
     setVisualizationVisible,
@@ -25,9 +25,19 @@ export default function StructButton({
                         })
                     );
                     setVisualizationVisible(true);
+
+                    setTimeout(() => {
+                        const element =
+                            document.getElementById("visualization");
+                        if (element)
+                            smoothScrollTo(element, {
+                                correction: -100,
+                                duration: 300,
+                            });
+                    }, 50);
                 }}
             >
-                <Link name="Составить портфель" link="#visualization"></Link>
+                Составить портфель
             </button>
         </div>
     );

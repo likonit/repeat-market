@@ -1,0 +1,23 @@
+.downloadBlock {
+    display: flex;
+    padding: 4vh 0;
+    justify-content: center;
+    font-family: "Raleway";
+}
+
+.downloadBlock a {
+    color: #b6b6b6;
+    font-size: 18px;
+    display: inline-block;
+    margin: 0 30px;
+    padding: 2px 0;
+    border-bottom: 1px solid #b6b6b6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.downloadBlock a:hover {
+    border-bottom: 1px solid var(--main-text-color);
+    color: var(--main-text-color);
+    transition: 0.3s;
+}

@@ -9,26 +9,29 @@ export default function limitStock(coins: StockCoinInfo[], limit: number) {
     );
 
     const initMarketCap = totalMarketCap;
+    let minus = 0;
+    if (coins.length > limit) minus = 1;
 
-    for (let i = 0; i < Math.min(coins.length - 1, limit - 1); i++) {
+    for (let i = 0; i < Math.min(coins.length - minus, limit - minus); i++) {
         const currentCoin = coins[i];
         totalMarketCap -= currentCoin.marketCap;
         result.push(currentCoin);
     }
 
-    result.push({
-        weight: totalMarketCap / initMarketCap,
-        name: "Другие",
-        symbol: "Другие",
-        imageLink: "",
-        APR: { canStake: false },
-        id: -1,
-        coinValue: -1,
-        usdValue: -1,
-        price: -1,
-        marketCap: totalMarketCap,
-        changePercent: -1,
-    });
+    if (minus === 1)
+        result.push({
+            weight: totalMarketCap / initMarketCap,
+            name: "Другие",
+            symbol: "Другие",
+            imageLink: "",
+            APR: { canStake: false },
+            id: -1,
+            coinValue: -1,
+            usdValue: -1,
+            price: -1,
+            marketCap: totalMarketCap,
+            changePercent: -1,
+        });
 
     result.sort((a, b) => b.weight - a.weight);
 

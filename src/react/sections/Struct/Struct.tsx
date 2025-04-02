@@ -23,8 +23,8 @@ export default function Struct() {
     let visalizedBlock = visualizationVisible ? (
         <div>
             <MarketVisualization></MarketVisualization>
-            <PartAnalyze></PartAnalyze>
             <StockDescription></StockDescription>
+            <PartAnalyze></PartAnalyze>
             <Download></Download>
         </div>
     ) : (

@@ -1,11 +1,12 @@
 import { StockCoinInfo } from "@/scripts/stock/createStock";
 import * as style from "@/styles/Struct/Visualization/marketCapBlock.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import CoinTip from "./CoinTip";
 import { useDispatch } from "react-redux";
 import { setCorrection } from "@/store/tooltipSlice";
 import TooltipPotral from "@/react/sections/Tooltip/TooltipPortal";
 import TooltipContainer from "@/react/sections/Tooltip/TooltipContainer";
+import { ActiveBlockContext } from "./providers/activeBlocks";
 
 export default function MarketVisualizationCoin({
     coin,
@@ -16,6 +17,8 @@ export default function MarketVisualizationCoin({
 }) {
     const [inblock, setInblock] = useState(false);
     const dispatch = useDispatch();
+    const activeBlocks = useContext(ActiveBlockContext);
+    const block = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         // заранее кешируем
@@ -23,6 +26,22 @@ export default function MarketVisualizationCoin({
             const image = new Image();
             image.src = coin.imageLink;
         }
+
+        function handleMouseIn() {
+            activeBlocks?.setIndex(index);
+        }
+
+        function handleMouseOut() {
+            activeBlocks?.setIndex(-1);
+        }
+
+        block.current?.addEventListener("mouseenter", handleMouseIn);
+        block.current?.addEventListener("mouseleave", handleMouseOut);
+
+        return () => {
+            block.current?.removeEventListener("mouseenter", handleMouseIn);
+            block.current?.removeEventListener("mouseleave", handleMouseOut);
+        };
     }, []);
 
     return (
@@ -46,11 +65,17 @@ export default function MarketVisualizationCoin({
                         <></>
                     )}
                     <div
+                        ref={block}
                         className={style.marketCapBlock__info_element__text}
                         style={{
-                            background: `rgb(${15 + index * 5},${
-                                194 - index * 6
-                            },116)`,
+                            background: `rgba(${15},${194},${116}, ${
+                                activeBlocks?.index == -1
+                                    ? 1
+                                    : activeBlocks?.index == index
+                                    ? 1
+                                    : 0.8
+                            })`,
+                            transition: ".3s",
                         }}
                     >
                         <span>{coin.symbol}</span>

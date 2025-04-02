@@ -4,7 +4,7 @@ import { saveAs } from "file-saver";
 export default function DonwloadJson({ coins }: { coins: StockCoinInfo[] }) {
     return (
         <div>
-            <button
+            <a
                 onClick={() => {
                     const jsonData: {
                         name: string;
@@ -26,8 +26,9 @@ export default function DonwloadJson({ coins }: { coins: StockCoinInfo[] }) {
                     saveAs(blob, "stock.json");
                 }}
             >
-                Скачать портфель в JSON
-            </button>
+                Скачать портфель в{" "}
+                <span style={{ color: "#4BABD8" }}>JSON</span>
+            </a>
         </div>
     );
 }

@@ -1,21 +1,27 @@
 export default function smoothScrollTo(
     element: HTMLElement,
-    duration: number = 600
+    options?: {
+        duration: number;
+        correction: number;
+    }
 ) {
     const targetPosition = element.getBoundingClientRect().top + window.scrollY;
     const startPosition = window.scrollY;
-    const distance = targetPosition - startPosition;
+    const distance =
+        targetPosition - startPosition + (options?.correction ?? 0);
+    const duration = options?.duration ?? 400;
 
-    let start: number | null = null;
+    const FPS = 1000 / 90;
 
-    function animationStep(timestamp: number) {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const ease = Math.min(progress / duration, 1);
-        window.scrollTo(0, startPosition + distance * ease);
+    function scrolling(i: number) {
+        const step = distance / (duration / FPS);
+        window.scrollTo(0, startPosition + step * i);
 
-        if (progress < duration) requestAnimationFrame(animationStep);
+        if (i < duration / FPS)
+            setTimeout(() => {
+                scrolling(i + 1);
+            }, FPS);
     }
 
-    requestAnimationFrame(animationStep);
+    scrolling(1);
 }

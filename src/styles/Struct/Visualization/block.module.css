@@ -68,7 +68,7 @@
 
 .visualizationBlock__container__checkboxes input {
     appearance: none;
-    background-color: #fff;
+    background-color: #e1e1e1;
     margin: 0;
     width: 21px;
     height: 21px;
@@ -76,6 +76,13 @@
     display: grid;
     place-content: center;
     border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.visualizationBlock__container__checkboxes input:hover {
+    background: #fff;
+    transition: 0.3s;
 }
 
 .visualizationBlock__container__checkboxes input::before {
