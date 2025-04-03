@@ -66,3 +66,9 @@
         line-height: 17px;
     }
 }
+
+@media screen and (max-width: 366px) {
+    .instructionBlock div {
+        padding: 5vw;
+    }
+}

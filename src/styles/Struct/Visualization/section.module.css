@@ -206,3 +206,9 @@
         --checkbox-size: 16px;
     }
 }
+
+@media screen and (max-width: 396px) {
+    .visualizationBlock__usdInput {
+        padding: 7px;
+    }
+}

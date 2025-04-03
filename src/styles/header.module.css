@@ -101,3 +101,25 @@
         font-size: 14px;
     }
 }
+
+@media screen and (max-width: 366px) {
+    .header_block__logo {
+        margin-right: 1vw;
+        font-size: 13px;
+    }
+
+    .header_block nav span {
+        padding: 7px 5px;
+    }
+}
+
+@media screen and (max-width: 346px) {
+    .header_block__logo {
+        margin-right: 1vw;
+        font-size: 10px;
+    }
+
+    .header_block nav span {
+        padding: 0 3px;
+    }
+}

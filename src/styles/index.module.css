@@ -167,3 +167,19 @@ footer {
         font-size: 24px;
     }
 }
+
+@media screen and (max-width: 366px) {
+    h1 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 346px) {
+    h1 {
+        font-size: 21px;
+    }
+    :root {
+        --main-text-size: 10px;
+        --icons-width: 28px;
+    }
+}
