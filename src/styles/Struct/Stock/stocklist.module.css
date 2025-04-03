@@ -40,10 +40,6 @@
     justify-content: center;
 }
 
-.stocklist__coinCard p {
-    font-size: var(--main-text-size);
-}
-
 .stocklist__coinCard:hover {
     transition: 0.3s;
     background: #1c082c;
@@ -89,6 +85,10 @@
     justify-content: start;
 }
 
+.stocklist__coinCard__weight p {
+    font-size: var(--main-text-size);
+}
+
 .stocklist__coinCard__APR span {
     font-size: var(--main-text-size);
     cursor: pointer;
@@ -114,5 +114,20 @@
 @media screen and (max-width: 1024px) {
     .stocklist__headers h3 {
         font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 828px) {
+    .stocklist::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .stocklist::-webkit-scrollbar-thumb {
+        border: 2px solid #2e0239;
+    }
+
+    .stocklist__coinCard__mainInfo__usdValue,
+    .stocklist__coinCard__mainInfo__value {
+        font-size: 12px;
     }
 }

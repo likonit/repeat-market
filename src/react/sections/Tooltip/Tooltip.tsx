@@ -1,3 +1,4 @@
+import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
 import { RootState } from "@/store/store";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -14,8 +15,11 @@ export default function Tooltip() {
         const FPS_visible = 1000 / 120;
         const FPS_invisible = 1000 / 30;
 
+        function handleMouseClick(event: MouseEvent) {
+            setPos({ x: event.clientX, y: event.clientY });
+        }
+
         function handleMouseMove(event: MouseEvent) {
-            // if (!visible) return;
             if (
                 new Date().getTime() - lastTimeChecked >
                 (visible ? FPS_visible : FPS_invisible)
@@ -25,10 +29,18 @@ export default function Tooltip() {
             }
         }
 
-        document.addEventListener("mousemove", handleMouseMove);
+        if (window.innerWidth >= MOBILE_START_WIDTH)
+            document.addEventListener("mousemove", handleMouseMove);
+        else {
+            document.addEventListener("click", handleMouseClick);
+        }
 
         return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
+            if (window.innerWidth >= MOBILE_START_WIDTH)
+                document.removeEventListener("mousemove", handleMouseMove);
+            else {
+                document.removeEventListener("click", handleMouseClick);
+            }
         };
     }, [lastTimeChecked, visible]);
     return (

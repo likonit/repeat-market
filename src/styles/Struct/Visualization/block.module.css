@@ -50,7 +50,7 @@
 }
 
 .visualizationBlock__container__checkboxes label {
-    font-size: 17px;
+    font-size: var(--main-text-size);
     color: #dde1e0;
     font-family: "Raleway";
     font-weight: 450;
@@ -119,5 +119,16 @@
     .visualizationBlock__usdInput {
         width: 35vw;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 828px) {
+    .visualizationBlock__container__checkboxes {
+        margin: 1.5vh 0;
+    }
+
+    .visualizationBlock__usdInput {
+        margin-top: 3vh;
+        font-size: 16px;
     }
 }

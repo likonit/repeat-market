@@ -1,3 +1,4 @@
+import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
 import {
     setCorrection,
     setTooltipVisibility,
@@ -38,9 +39,16 @@ export default function TooltipContainer({
         target.current?.addEventListener("mouseenter", handleMouseIn);
         target.current?.addEventListener("mouseleave", handleMouseLeave);
 
+        if (window.innerWidth <= MOBILE_START_WIDTH) {
+            window.addEventListener("scroll", handleMouseLeave);
+        }
         return () => {
             target.current?.removeEventListener("mouseenter", handleMouseIn);
             target.current?.removeEventListener("mouseleave", handleMouseLeave);
+
+            if (window.innerWidth <= MOBILE_START_WIDTH) {
+                window.removeEventListener("scroll", handleMouseLeave);
+            }
         };
     }, []);
 

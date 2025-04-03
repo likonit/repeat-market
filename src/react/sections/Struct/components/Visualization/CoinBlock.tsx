@@ -7,6 +7,7 @@ import { setCorrection } from "@/store/tooltipSlice";
 import TooltipPotral from "@/react/sections/Tooltip/TooltipPortal";
 import TooltipContainer from "@/react/sections/Tooltip/TooltipContainer";
 import { ActiveBlockContext } from "./providers/activeBlocks";
+import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
 
 export default function MarketVisualizationCoin({
     coin,
@@ -38,9 +39,17 @@ export default function MarketVisualizationCoin({
         block.current?.addEventListener("mouseenter", handleMouseIn);
         block.current?.addEventListener("mouseleave", handleMouseOut);
 
+        if (window.innerWidth <= MOBILE_START_WIDTH) {
+            document.addEventListener("scroll", handleMouseOut);
+        }
+
         return () => {
             block.current?.removeEventListener("mouseenter", handleMouseIn);
             block.current?.removeEventListener("mouseleave", handleMouseOut);
+
+            if (window.innerWidth <= MOBILE_START_WIDTH) {
+                document.removeEventListener("scroll", handleMouseOut);
+            }
         };
     }, []);
 

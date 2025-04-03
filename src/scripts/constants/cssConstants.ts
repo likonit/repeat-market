@@ -4,3 +4,5 @@ export const goodLevels = {
     ok: "#C3FFB6",
     good: "#58E95A",
 };
+
+export const MOBILE_START_WIDTH = 828;
