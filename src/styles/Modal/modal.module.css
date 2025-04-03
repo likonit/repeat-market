@@ -36,3 +36,15 @@
 .modalWindowContainer__closeButton:hover {
     transition: 0.3s;
 }
+
+@media screen and (max-width: 1024px) {
+    .modalWindowContainer__action {
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .modalWindowContainer__closeButton {
+        top: 1.5vw;
+        right: 2vw;
+    }
+}

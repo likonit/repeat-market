@@ -5,7 +5,7 @@
 .about__text {
     width: 100%;
     font-size: 18px;
-    padding: 3vh;
+    margin: 5vh 0;
     text-align: center;
     color: #b6b6b6;
     display: flex;
@@ -19,4 +19,14 @@
 .about__buttonContainer {
     margin: 3vh 0;
     text-align: center;
+}
+
+@media screen and (max-width: 828px) {
+    .about__text p {
+        max-width: 80%;
+    }
+
+    .about__text {
+        margin: 8vh 0;
+    }
 }

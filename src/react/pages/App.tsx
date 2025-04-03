@@ -8,8 +8,8 @@ import { RootState } from "@/store/store";
 import Tooltip from "../sections/Tooltip/Tooltip";
 import * as style from "@/styles/bg.module.css";
 import "@/styles/index.module.css";
-import { useEffect } from "react";
 import Footer from "../sections/Footer";
+import ErrorPopup from "../sections/Modal/Error/ErrorPopup";
 
 export default function App() {
     const isVisibleOverflow = useSelector(
@@ -33,6 +33,7 @@ export default function App() {
             </div>
             <ModalWindow></ModalWindow>
             <Tooltip></Tooltip>
+            <ErrorPopup></ErrorPopup>
         </>
     );
 }

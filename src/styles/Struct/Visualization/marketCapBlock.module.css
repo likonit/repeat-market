@@ -1,3 +1,7 @@
+:root {
+    --market-cap-block-height: 70vh;
+}
+
 .marketCap {
     display: flex;
     justify-content: center;
@@ -5,14 +9,14 @@
 
 .marketCapBlock {
     width: 80vw;
-    height: 70vh;
+    height: var(--market-cap-block-height);
     display: grid;
     grid-template-rows: minmax(0, 1fr);
 }
 
 .marketCapBlock div {
     min-height: 0;
-    max-height: 70vh;
+    max-height: var(--market-cap-block-height);
     height: 100%;
     width: 100%;
 }
@@ -37,16 +41,17 @@
     width: 50px;
     height: 50px;
     background: #11011e;
+    border: 1px solid #3f036e;
     opacity: 0.9;
     color: white;
-    padding: 3px;
+    padding: 2px;
     border-radius: 5px;
     font-size: 12px;
     display: grid;
     align-items: center;
 }
 
-.marketCapTooltip p:first-child {
+.marketCapTooltip:first-child {
     margin-bottom: 8px;
 }
 
@@ -54,4 +59,19 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    padding: 3px 0;
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --market-cap-block-height: 75vh;
+    }
+
+    .marketCapBlock {
+        width: 95vw;
+    }
+
+    .marketCapBlock__info_element__text {
+        font-size: 12px;
+    }
 }

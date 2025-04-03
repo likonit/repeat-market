@@ -1,0 +1,33 @@
+.errorModal_active,
+.errorModal_noactive {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    padding-bottom: 2vh;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.errorModal_noactive {
+    bottom: -20vh;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.errorModal_active div,
+.errorModal_noactive div {
+    width: 90%;
+    height: 80%;
+    background: #f05a5a;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--main-text-size);
+    color: #fff;
+}

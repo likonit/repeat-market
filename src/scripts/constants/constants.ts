@@ -52,26 +52,53 @@ const defaultStake: (min: number, APR?: number) => StakeInfo = (
     };
 };
 
+class StakingCoin implements StakeInfo {
+    APR: number;
+    minStakeValue: number;
+    daysToTake: number;
+    bonus:
+        | {
+              to: number;
+              APR: number;
+          }
+        | undefined;
+
+    constructor(props: {
+        APR?: number;
+        minStakeValue?: number;
+        daysToTake?: number;
+        bonus?: { to: number; APR: number };
+    }) {
+        this.APR = props.APR ?? 1;
+        this.minStakeValue = props.minStakeValue ?? 1;
+        this.daysToTake = props.daysToTake ?? 1;
+        this.bonus = props.bonus;
+    }
+}
+
 export const stakeBybit = new Map<string, StakeInfo>();
 stakeBybit
-    .set("BTC", {
-        APR: 0.3,
-        minStakeValue: 0.001,
-        daysToTake: 1,
-        bonus: {
-            to: 0.005,
-            APR: 2.3,
-        },
-    })
-    .set("ETH", {
-        APR: 1,
-        minStakeValue: 0.001,
-        daysToTake: 1,
-        bonus: {
-            to: 0.2,
-            APR: 3,
-        },
-    })
+    .set(
+        "BTC",
+        new StakingCoin({
+            APR: 0.3,
+            minStakeValue: 0.001,
+            bonus: {
+                to: 0.005,
+                APR: 2.3,
+            },
+        })
+    )
+    .set(
+        "ETH",
+        new StakingCoin({
+            minStakeValue: 0.001,
+            bonus: {
+                to: 0.2,
+                APR: 3,
+            },
+        })
+    )
     .set("USDT", {
         APR: 1.05,
         minStakeValue: 1,
@@ -81,90 +108,105 @@ stakeBybit
             APR: 6.05,
         },
     })
-    .set("USDC", {
-        APR: 1.27,
-        minStakeValue: 1,
-        daysToTake: 1,
-        bonus: {
-            to: 500,
-            APR: 6.27,
-        },
-    })
-    .set("MNT", {
-        APR: 0.88,
-        minStakeValue: 20,
-        daysToTake: 1,
-        bonus: {
-            to: 300,
-            APR: 1.88,
-        },
-    })
-    .set("MOVE", {
-        APR: 27.36,
-        minStakeValue: 1,
-        daysToTake: 1,
-        bonus: undefined,
-    })
-    .set("MNT", {
-        APR: 0.88,
-        minStakeValue: 20,
-        daysToTake: 1,
-        bonus: {
-            to: 300,
-            APR: 1.88,
-        },
-    })
-    .set("ATOM", {
-        APR: 19.13,
-        minStakeValue: 1,
-        daysToTake: 1,
-        bonus: undefined,
-    })
-    .set("NEAR", {
-        APR: 9.03,
-        minStakeValue: 1,
-        daysToTake: 1,
-        bonus: undefined,
-    })
-    .set("DAI", {
-        APR: 7.94,
-        minStakeValue: 2,
-        daysToTake: 1,
-        bonus: {
-            to: 1000,
-            APR: 7.94,
-        },
-    })
-    .set("SOL", {
-        APR: 5.4,
-        minStakeValue: 0.1,
-        daysToTake: 3,
-        bonus: undefined,
-    })
-    .set("XRP", {
-        APR: 0.7,
-        minStakeValue: 600,
-        daysToTake: 1,
-        bonus: undefined,
-    })
-    .set("BNB", {
-        APR: 1.81,
-        minStakeValue: 0.05,
-        daysToTake: 1,
-        bonus: undefined,
-    })
-    .set("TON", {
-        APR: 4.31,
-        minStakeValue: 1.5,
-        daysToTake: 3,
-        bonus: undefined,
-    })
-    .set("ADA", {
-        APR: 3.93,
-        minStakeValue: 1.5,
-        daysToTake: 20,
-        bonus: undefined,
-    })
+    .set(
+        "USDC",
+        new StakingCoin({
+            APR: 1.27,
+            bonus: {
+                to: 500,
+                APR: 6.27,
+            },
+        })
+    )
+    .set(
+        "MNT",
+        new StakingCoin({
+            APR: 0.88,
+            minStakeValue: 20,
+            bonus: {
+                to: 300,
+                APR: 1.88,
+            },
+        })
+    )
+    .set(
+        "MOVE",
+        new StakingCoin({
+            APR: 27.36,
+        })
+    )
+    .set(
+        "MNT",
+        new StakingCoin({
+            APR: 0.88,
+            minStakeValue: 20,
+            bonus: {
+                to: 300,
+                APR: 1.88,
+            },
+        })
+    )
+    .set(
+        "ATOM",
+        new StakingCoin({
+            APR: 19.13,
+        })
+    )
+    .set(
+        "NEAR",
+        new StakingCoin({
+            APR: 9.03,
+        })
+    )
+    .set(
+        "DAI",
+        new StakingCoin({
+            APR: 2,
+            minStakeValue: 2,
+            bonus: {
+                to: 1000,
+                APR: 7.94,
+            },
+        })
+    )
+    .set(
+        "SOL",
+        new StakingCoin({
+            APR: 5.4,
+            minStakeValue: 0.1,
+            daysToTake: 3,
+        })
+    )
+    .set(
+        "XRP",
+        new StakingCoin({
+            APR: 0.7,
+            minStakeValue: 600,
+        })
+    )
+    .set(
+        "BNB",
+        new StakingCoin({
+            APR: 1.81,
+            minStakeValue: 0.05,
+        })
+    )
+    .set(
+        "TON",
+        new StakingCoin({
+            APR: 4.31,
+            minStakeValue: 1.5,
+            daysToTake: 3,
+        })
+    )
+    .set(
+        "ADA",
+        new StakingCoin({
+            APR: 3.93,
+            minStakeValue: 1.5,
+            daysToTake: 20,
+        })
+    )
     .set("LTC", defaultStake(0.05))
     .set("SHIB", defaultStake(100000))
     .set("TRX", defaultStake(50))

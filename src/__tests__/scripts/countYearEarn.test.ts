@@ -51,7 +51,6 @@ describe("countYearEarn", () => {
 
     test("Проверка рассчетов доходности стейкинга с бонусом", () => {
         const totalAPR = countYearEarn(BTC);
-        console.log(totalAPR);
         expect(totalAPR).toBeGreaterThan(10);
     });
 
@@ -83,9 +82,7 @@ describe("countYearEarn", () => {
         const totalAPR_everyday = countYearEarn(coin);
 
         coin.APR.dayToTake = 10;
-        console.log(coin);
         const totalAPR_no_everyday = countYearEarn(coin);
-        console.log(totalAPR_everyday, totalAPR_no_everyday);
         expect(totalAPR_everyday).toBeGreaterThan(totalAPR_no_everyday);
         expect(totalAPR_no_everyday).toBeGreaterThan(10);
     });

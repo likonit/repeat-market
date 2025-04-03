@@ -19,10 +19,8 @@ export default async function loadCoins(
                 marketCap: item.quote.USD.market_cap,
             };
         });
-        console.log(jsonData.data);
         return rows;
     } catch (e) {
-        console.log(e);
         return [];
     }
 }

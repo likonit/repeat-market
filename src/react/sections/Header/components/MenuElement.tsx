@@ -22,7 +22,6 @@ export default function MenuElement({
                 const currY = linkedElement.getBoundingClientRect().top;
                 if (Math.abs(currY) <= 300) {
                     setActiveLink(index);
-                    console.log(index, currY);
                 }
             }
         }

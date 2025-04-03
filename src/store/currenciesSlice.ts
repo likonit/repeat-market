@@ -14,10 +14,12 @@ const initialState: {
     coinsList: CoinRowInfo[];
     totalMarketCap: number;
     stockList: StockCoinInfo[];
+    inError: boolean;
 } = {
     coinsList: [],
     stockList: [],
     totalMarketCap: 0,
+    inError: false,
 };
 
 export const fetchCurrencies = createAsyncThunk("cyrrencies/get", async () => {
@@ -40,11 +42,16 @@ const currenciesSlice = createSlice({
                 current(state.coinsList),
                 action.payload.fields
             );
-            const coinsWithWeight = createWeights(filteredCoins);
-            state.stockList = createStock(
-                coinsWithWeight,
-                action.payload.budget
-            );
+
+            if (filteredCoins.length == 0) {
+                state.inError = true;
+            } else {
+                const coinsWithWeight = createWeights(filteredCoins);
+                state.stockList = createStock(
+                    coinsWithWeight,
+                    action.payload.budget
+                );
+            }
         },
     },
     extraReducers: (builder) => {

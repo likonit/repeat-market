@@ -23,32 +23,29 @@ export default function createStock(
         const currentCoin = coins[i];
         let coinUSDvalue = initialBudget * currentCoin.weight;
         budget -= coinUSDvalue;
-        limitedMarketCap += currentCoin.marketCap;
 
         if (
             budget < minBuyUSDValue ||
             i + 1 == coins.length ||
             coinUSDvalue < minBuyUSDValue
         ) {
-            budget = 0;
+            break;
         }
+        limitedMarketCap += currentCoin.marketCap;
         i++;
     }
 
     budget = initialBudget;
+    const coinsCount = i;
     i = 0;
 
-    while (budget > 0) {
+    while (i < coinsCount) {
         const currentCoin = coins[i];
         const currWeight = currentCoin.marketCap / limitedMarketCap;
         let coinUSDvalue = initialBudget * currWeight;
 
         let coinValue = coinUSDvalue / currentCoin.price;
         budget -= coinUSDvalue;
-
-        if (budget < minBuyUSDValue || i + 1 == coins.length) {
-            break;
-        }
 
         const stakeInfo: StakeInfo | undefined = stakeBybit.get(
             currentCoin.symbol

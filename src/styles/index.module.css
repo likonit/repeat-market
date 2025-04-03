@@ -43,6 +43,7 @@ h1 {
     font-family: "Raleway";
     font-weight: bold;
     text-align: center;
+    margin: 0 var(--borders-margin);
 }
 
 button {
@@ -84,4 +85,28 @@ footer {
     width: 100vw;
     font-family: "Raleway";
     height: 7vh;
+    border-top: 1px solid #280246;
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --main-text-size: 15px;
+        --borders-margin: 5vw;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 828px) {
+    :root {
+        --main-text-size: 14px;
+        --borders-margin: 6vw;
+        --icons-width: 52px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
 }

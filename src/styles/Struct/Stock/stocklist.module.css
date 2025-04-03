@@ -40,6 +40,10 @@
     justify-content: center;
 }
 
+.stocklist__coinCard p {
+    font-size: var(--main-text-size);
+}
+
 .stocklist__coinCard:hover {
     transition: 0.3s;
     background: #1c082c;
@@ -86,6 +90,7 @@
 }
 
 .stocklist__coinCard__APR span {
+    font-size: var(--main-text-size);
     cursor: pointer;
 }
 
@@ -104,4 +109,10 @@
 .stocklist__coinCard__mainInfo__value {
     color: #b6d5cc;
     font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+    .stocklist__headers h3 {
+        font-size: 18px;
+    }
 }

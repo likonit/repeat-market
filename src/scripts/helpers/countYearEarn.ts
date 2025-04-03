@@ -19,7 +19,6 @@ function isStakable(coin: APRInfo): coin is {
 export default function countYearEarn(coin: StockCoinInfo): number {
     // считаем в выражении монеты
     let currentValue = coin.coinValue;
-    console.log(currentValue, coin.symbol);
     if (isStakable(coin.APR)) {
         if (coin.APR.minValue > currentValue) return 0;
 

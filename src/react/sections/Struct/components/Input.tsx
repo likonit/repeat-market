@@ -5,26 +5,27 @@ import { changeInput } from "@/store/inputSlice";
 import StructButton from "./Button";
 import * as style from "@/styles/Struct/Visualization/block.module.css";
 
+const checkBoxes: CheckBoxInfo[] = [
+    {
+        name: "Не учитывать мемкоины",
+        checked: true,
+    },
+    {
+        name: "Не учитывать стейблкоины",
+        checked: true,
+    },
+    {
+        name: "Только монеты с Bybit Earn (стейкинг, ончейн и т.д.)",
+        checked: false,
+    },
+];
+
 export default function StructInputBlock({
     setVisualizationVisible,
 }: {
     setVisualizationVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
     const dispatch = useDispatch();
-    const checkBoxes: CheckBoxInfo[] = [
-        {
-            name: "Не учитывать мемкоины",
-            checked: true,
-        },
-        {
-            name: "Не учитывать стейблкоины",
-            checked: true,
-        },
-        {
-            name: "Только монеты с Bybit earn (стейкинг, ончейн и т.д.)",
-            checked: false,
-        },
-    ];
 
     return (
         <div className={style.visualizationBlock}>

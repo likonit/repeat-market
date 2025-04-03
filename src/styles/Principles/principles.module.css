@@ -20,8 +20,11 @@
     border: 1px solid #260a3d;
     padding: 2vw;
     border-radius: 18px;
-    margin: 0 12px;
+    margin: 0 16px;
     opacity: 0.95;
+    transition: 0.3s;
+    cursor: pointer;
+    will-change: transform;
 }
 
 .principles__cardsContainer__grid__card h3 {
@@ -32,13 +35,53 @@
     margin: 2vh 0;
 }
 
+.principles__cardsContainer__grid__card:hover {
+    background: #210935;
+    transition: 0.3s;
+    transform: translateY(-15px);
+    box-shadow: 0 0 10px #260a3d;
+}
+
 .principles__cardsContainer__grid__card p {
     font-family: "Roboto";
-    font-size: 16px;
+    font-size: var(--main-text-size);
     color: #b6b6b6;
 }
 
 .principles__cardsContainer__grid__card img {
     width: var(--icons-width);
     height: var(--icons-width);
+}
+
+@media screen and (max-width: 1280px) {
+    .principles__cardsContainer__grid__card {
+        width: 18vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .principles__cardsContainer__grid__card {
+        margin: 20px;
+        width: 25vw;
+    }
+    .principles__cardsContainer__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 828px) {
+    .principles__cardsContainer__grid__card {
+        margin: 22px;
+        width: 30vw;
+    }
+
+    .principles__cardsContainer__grid__card h3 {
+        font-size: 18px;
+        margin: 2.5vh 0;
+    }
+
+    .principles h1 {
+        padding: 10vh 0 12vh 0;
+    }
 }

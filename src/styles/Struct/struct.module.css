@@ -1,3 +1,31 @@
 .struct h1 {
     padding: 20vh 0 15vh 0;
 }
+
+.instructionBlock {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 10vh;
+}
+
+.instructionBlock div {
+    width: 80%;
+    padding: 2vw;
+    border: 2px solid #251933;
+    border-radius: 12px;
+    background: #140123;
+}
+
+.instructionBlock div h2 {
+    font-size: 24px;
+    color: #fff;
+    font-family: "Raleway";
+    margin-bottom: 12px;
+}
+
+.instructionBlock div p {
+    color: #d0d0d0;
+    font-size: var(--main-text-size);
+}

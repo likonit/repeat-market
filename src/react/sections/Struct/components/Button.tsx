@@ -3,6 +3,7 @@ import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import * as style from "@/styles/Struct/Visualization/block.module.css";
 import smoothScrollTo from "@/scripts/helpers/dom/scrollToElement";
+import { setErrorText, setErrorVisibility } from "@/store/modalSlice";
 
 export default function StructButton({
     setVisualizationVisible,
@@ -18,6 +19,11 @@ export default function StructButton({
         <div className={style.struct__button}>
             <button
                 onClick={() => {
+                    if (input < 5) {
+                        dispatch(setErrorVisibility(true));
+                        dispatch(setErrorText("Минимальный бюджет - 5$."));
+                        return;
+                    }
                     dispatch(
                         createStockList({
                             fields,

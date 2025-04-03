@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import * as style from "@/styles/Struct/Visualization/marketCapBlock.module.css";
 import VisualizationGridBlock from "./GridBlock";
 import limitStock from "@/scripts/stock/limitStock";
-import { useContext } from "react";
 import ActiveBlockProvider from "./providers/activeBlocks";
 
 export default function MarketVisualization() {

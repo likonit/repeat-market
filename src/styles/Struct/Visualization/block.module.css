@@ -30,10 +30,13 @@
     display: block;
     outline: none;
     font-size: 18px;
+    transition: 0.3s;
 }
 
 .visualizationBlock__usdInput:focus {
-    border: 2px solid #7551a5;
+    border: 2px solid hsl(266, 34%, 48%);
+    transition: 0.3s;
+    box-shadow: 0 0 6px #4f376f;
 }
 
 .visualizationBlock__usdInput::placeholder {
@@ -99,4 +102,22 @@
 
 .visualizationBlock__container__checkboxes input:checked::before {
     transform: scale(1);
+}
+
+@media screen and (max-width: 1024px) {
+    .visualizationBlock__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .visualizationBlock__container__block {
+        display: grid;
+        justify-items: center;
+    }
+
+    .visualizationBlock__usdInput {
+        width: 35vw;
+        text-align: center;
+    }
 }

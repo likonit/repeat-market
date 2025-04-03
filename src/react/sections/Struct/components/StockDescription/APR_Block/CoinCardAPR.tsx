@@ -27,8 +27,6 @@ export default function CoinCardAPR({ coin }: { coin: StockCoinInfo }) {
             )
         );
 
-        console.log(height);
-
         dispatch(
             setCorrection({
                 x: -width / 2,
