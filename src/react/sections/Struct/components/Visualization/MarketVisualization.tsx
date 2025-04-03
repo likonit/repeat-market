@@ -4,10 +4,14 @@ import * as style from "@/styles/Struct/Visualization/marketCapBlock.module.css"
 import VisualizationGridBlock from "./GridBlock";
 import limitStock from "@/scripts/stock/limitStock";
 import ActiveBlockProvider from "./providers/activeBlocks";
+import { VISUALIZATION_RESTRUCT } from "@/scripts/constants/cssConstants";
 
 export default function MarketVisualization() {
     const limitedStockList = useSelector((store: RootState) =>
-        limitStock(store.currenciesSlice.stockList, 12)
+        limitStock(
+            store.currenciesSlice.stockList,
+            window.innerWidth > VISUALIZATION_RESTRUCT ? 12 : 9
+        )
     );
 
     return (
@@ -15,7 +19,7 @@ export default function MarketVisualization() {
             <div className={style.marketCapBlock}>
                 <ActiveBlockProvider>
                     <VisualizationGridBlock
-                        type={true}
+                        type={window.innerWidth > VISUALIZATION_RESTRUCT}
                         info={{
                             index: 0,
                             coins: limitedStockList,

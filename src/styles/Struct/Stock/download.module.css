@@ -21,3 +21,14 @@
     color: var(--main-text-color);
     transition: 0.3s;
 }
+
+@media screen and (max-width: 648px) {
+    .downloadBlock {
+        display: grid;
+    }
+
+    .downloadBlock a {
+        font-size: 16px;
+        margin: 25px 0;
+    }
+}

@@ -132,3 +132,33 @@
         font-size: 16px;
     }
 }
+
+@media screen and (max-width: 648px) {
+    .visualizationBlock__usdInput {
+        font-size: 15px;
+        width: 50vw;
+        margin-top: 3vh;
+    }
+
+    .visualizationBlock h3 {
+        margin: 8vh 0 3vh;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .visualizationBlock__usdInput {
+        font-size: 13px;
+        width: 70vw;
+        border: 1px solid #513872;
+    }
+
+    .visualizationBlock__usdInput:focus {
+        border: 1px solid hsl(266, 34%, 48%);
+    }
+
+    .visualizationBlock h3 {
+        margin: 8vh 0 3vh;
+        font-size: 22px;
+    }
+}

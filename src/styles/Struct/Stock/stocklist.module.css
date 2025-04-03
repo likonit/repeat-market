@@ -1,5 +1,6 @@
 :root {
     --modal-borders-color: #281534;
+    --stocklist-grid: 2fr 4fr 2fr 2fr;
 }
 
 .stocklist {
@@ -31,7 +32,7 @@
 
 .stocklist__coinCard {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr 2fr;
+    grid-template-columns: var(--stocklist-grid);
     padding: 1vh 0;
     border-bottom: 1px solid var(--modal-borders-color);
     align-items: center;
@@ -47,7 +48,7 @@
 
 .stocklist__headers {
     display: grid;
-    grid-template-columns: 2fr 4fr 2fr 2fr;
+    grid-template-columns: var(--stocklist-grid);
     border-bottom: 1px solid var(--modal-borders-color);
 }
 
@@ -83,6 +84,11 @@
 
 .stocklist__coinCard__mainInfo {
     justify-content: start;
+}
+
+.stocklist__coinCard__mainInfo div {
+    display: grid;
+    align-items: center;
 }
 
 .stocklist__coinCard__weight p {
@@ -129,5 +135,47 @@
     .stocklist__coinCard__mainInfo__usdValue,
     .stocklist__coinCard__mainInfo__value {
         font-size: 12px;
+    }
+
+    .button_block {
+        padding: 12vh 0 10vh 0;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .stocklist__headers h3 {
+        font-size: 16px;
+    }
+
+    :root {
+        --stocklist-grid: 2fr 3fr 2fr 3fr;
+    }
+
+    .stocklist__coinCard__imageBlock img {
+        width: var(--icons-width);
+        height: var(--icons-width);
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .stocklist__headers h3 {
+        font-size: 14px;
+    }
+
+    .stocklist::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .stocklist::-webkit-scrollbar-thumb {
+        border: 1px solid #2e0239;
+    }
+
+    .stocklist__coinCard__mainInfo__usdValue,
+    .stocklist__coinCard__mainInfo__value {
+        font-size: 11px;
+    }
+
+    .stocklist {
+        max-height: 88vh;
     }
 }

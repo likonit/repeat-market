@@ -110,3 +110,30 @@ footer {
         font-size: 34px;
     }
 }
+
+@media screen and (max-width: 648px) {
+    :root {
+        --main-text-size: 13px;
+        --borders-margin: 7vw;
+        --icons-width: 42px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    :root {
+        --main-text-size: 12px;
+        --icons-width: 36px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    button {
+        padding: 11px 16px;
+    }
+}

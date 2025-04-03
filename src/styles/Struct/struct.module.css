@@ -29,3 +29,15 @@
     color: #d0d0d0;
     font-size: var(--main-text-size);
 }
+
+@media screen and (max-width: 648px) {
+    .instructionBlock div {
+        width: 85%;
+        padding: 3vw;
+    }
+
+    .instructionBlock div h2 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+}

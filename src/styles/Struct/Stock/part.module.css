@@ -5,3 +5,10 @@
     color: var(--main-text-color);
     font-weight: bold;
 }
+
+@media screen and (max-width: 648px) {
+    .partBlock {
+        font-size: 22px;
+        padding: 5vh 0;
+    }
+}

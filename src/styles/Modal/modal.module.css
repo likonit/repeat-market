@@ -15,7 +15,7 @@
     width: 70vw;
     height: 80vh;
     background: #160622;
-    padding: 3vw 2vw 2vw 2vw;
+    padding: 3vh 2vw 2vh 2vw;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -45,6 +45,20 @@
 
     .modalWindowContainer__closeButton {
         top: 1.5vw;
+        right: 2vw;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .modalWindowContainer__action {
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .modalWindowContainer__closeButton {
+        top: 2vw;
         right: 2vw;
     }
 }

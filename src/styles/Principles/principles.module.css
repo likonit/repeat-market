@@ -66,8 +66,10 @@
     }
     .principles__cardsContainer__grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
     }
+}
+
+.principles__cardsContainer__grid__card__container {
 }
 
 @media screen and (max-width: 828px) {
@@ -83,5 +85,32 @@
 
     .principles h1 {
         padding: 10vh 0 12vh 0;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .principles__cardsContainer__grid__card {
+        margin: 12px;
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .principles__cardsContainer__grid__card__container {
+        display: flex;
+        align-items: center;
+    }
+
+    .principles__cardsContainer__grid__card {
+        margin: 8px;
+    }
+
+    .principles__cardsContainer__grid__card h3 {
+        font-size: 15px;
+        padding-left: 7px;
+    }
+
+    .principles h1 {
+        padding: 5vh 0 8vh 0;
     }
 }

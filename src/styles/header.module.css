@@ -51,3 +51,26 @@
 .header_block__logo span:last-child {
     color: var(--selected-text-color);
 }
+
+@media screen and (max-width: 828px) {
+    .header_block__logo {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .header_block__logo {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .header_block__logo {
+        margin-right: 5vw;
+        font-size: 17px;
+    }
+
+    .header_block nav span {
+        padding: 10px 7px;
+    }
+}

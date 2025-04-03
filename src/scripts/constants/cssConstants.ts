@@ -6,3 +6,4 @@ export const goodLevels = {
 };
 
 export const MOBILE_START_WIDTH = 828;
+export const VISUALIZATION_RESTRUCT = 648;
