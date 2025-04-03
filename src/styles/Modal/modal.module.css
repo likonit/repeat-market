@@ -62,3 +62,9 @@
         right: 2vw;
     }
 }
+
+@media screen and (max-width: 396px) {
+    .modalWindowContainer__closeButton {
+        font-size: 17px;
+    }
+}

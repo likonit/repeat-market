@@ -62,6 +62,11 @@
     .header_block__logo {
         font-size: 18px;
     }
+
+    .header_block__no_activeLink a:hover {
+        transition: 0.3s;
+        color: var(--main-text-color);
+    }
 }
 
 @media screen and (max-width: 524px) {
@@ -72,5 +77,27 @@
 
     .header_block nav span {
         padding: 10px 7px;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .header_block__logo {
+        margin-right: 2vw;
+        font-size: 15px;
+    }
+
+    .header_block nav span {
+        padding: 10px 5px;
+    }
+
+    .header_block nav span a {
+        padding: 1px 0;
+    }
+}
+
+@media screen and (max-width: 396px) {
+    .header_block__logo {
+        margin-right: 4vw;
+        font-size: 14px;
     }
 }

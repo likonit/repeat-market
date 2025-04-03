@@ -7,3 +7,9 @@
     background: url("../assets/backgrounds/bg-main.png") no-repeat;
     background-size: 100vw;
 }
+
+@media screen and (max-width: 648px) {
+    .bg_header_about {
+        background-position-y: 30vh;
+    }
+}

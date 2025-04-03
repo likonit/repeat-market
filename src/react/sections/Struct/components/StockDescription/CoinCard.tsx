@@ -1,6 +1,7 @@
 import { StockCoinInfo } from "@/scripts/stock/createStock";
 import * as style from "@/styles/Struct/Stock/stocklist.module.css";
 import CoinCardAPR from "./APR_Block/CoinCardAPR";
+import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
 
 export default function StockCoinCard({ coin }: { coin: StockCoinInfo }) {
     return (
@@ -28,7 +29,10 @@ export default function StockCoinCard({ coin }: { coin: StockCoinInfo }) {
                         {coin.usdValue.toFixed(2)} $
                     </p>
                     <p className={style.stocklist__coinCard__mainInfo__value}>
-                        {coin.coinValue.toFixed(12)} {coin.symbol}
+                        {coin.coinValue.toFixed(
+                            window.innerWidth > MOBILE_START_WIDTH ? 12 : 10
+                        )}{" "}
+                        {coin.symbol}
                     </p>
                 </div>
             </div>

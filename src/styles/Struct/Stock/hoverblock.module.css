@@ -37,3 +37,17 @@
         --hoverblockAPRInfo-width: 200px;
     }
 }
+
+@media screen and (max-width: 526px) {
+    .hoverblockAPRInfo__row {
+        font-size: 11px;
+    }
+
+    .hoverblockAPRInfo__rowMini {
+        font-size: 9px;
+    }
+
+    :root {
+        --hoverblockAPRInfo-height: 90px;
+    }
+}

@@ -1,3 +1,7 @@
+:root {
+    --checkbox-size: 21px;
+}
+
 .visualizationBlock__container {
     display: flex;
     justify-content: center;
@@ -73,8 +77,8 @@
     appearance: none;
     background-color: #e1e1e1;
     margin: 0;
-    width: 21px;
-    height: 21px;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
     border-radius: 3px;
     display: grid;
     place-content: center;
@@ -90,8 +94,8 @@
 
 .visualizationBlock__container__checkboxes input::before {
     content: "";
-    width: 18px;
-    height: 18px;
+    width: calc(var(--checkbox-size) - 3px);
+    height: calc(var(--checkbox-size) - 3px);
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em #7207ca;
@@ -102,6 +106,11 @@
 
 .visualizationBlock__container__checkboxes input:checked::before {
     transform: scale(1);
+}
+
+.button_block {
+    text-align: center;
+    padding: 7vh 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -131,6 +140,10 @@
         margin-top: 3vh;
         font-size: 16px;
     }
+
+    .button_block {
+        padding: 12vh 0 10vh 0;
+    }
 }
 
 @media screen and (max-width: 648px) {
@@ -143,6 +156,10 @@
     .visualizationBlock h3 {
         margin: 8vh 0 3vh;
         font-size: 22px;
+    }
+
+    :root {
+        --checkbox-size: 18px;
     }
 }
 
@@ -160,5 +177,32 @@
     .visualizationBlock h3 {
         margin: 8vh 0 3vh;
         font-size: 22px;
+    }
+
+    .struct__button {
+        padding: 7vh 0;
+    }
+
+    .button_block {
+        padding: 8vh 0 10vh 0;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .visualizationBlock__usdInput {
+        width: 80vw;
+    }
+
+    .visualizationBlock h3 {
+        margin: 5vh 0 2vh;
+        font-size: 18px;
+    }
+
+    .struct__button {
+        padding: 3vh 0 10vh 0;
+    }
+
+    :root {
+        --checkbox-size: 16px;
     }
 }

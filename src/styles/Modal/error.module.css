@@ -31,3 +31,11 @@
     font-size: var(--main-text-size);
     color: #fff;
 }
+
+@media screen and (max-width: 456px) {
+    .errorModal_active div,
+    .errorModal_noactive div {
+        height: 90%;
+        border-radius: 7px;
+    }
+}

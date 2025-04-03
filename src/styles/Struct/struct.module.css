@@ -41,3 +41,28 @@
         margin-bottom: 24px;
     }
 }
+
+@media screen and (max-width: 456px) {
+    .instructionBlock div h2 {
+        font-size: 19px;
+    }
+
+    .instructionBlock div {
+        width: 85%;
+        padding: 3vh 3vw;
+    }
+
+    .instructionBlock {
+        padding-bottom: 2vh;
+    }
+
+    .struct h1 {
+        padding: 15vh 0 10vh 0;
+    }
+}
+
+@media screen and (max-width: 396px) {
+    .instructionBlock div p {
+        line-height: 17px;
+    }
+}

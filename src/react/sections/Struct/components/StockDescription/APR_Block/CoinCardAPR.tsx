@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import CoinCardAPRHoverBlock from "./HoverBlock/HoverBlock";
 import { useDispatch } from "react-redux";
 import { setCorrection } from "@/store/tooltipSlice";
+import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
 
 export default function CoinCardAPR({ coin }: { coin: StockCoinInfo }) {
     const [visible, setVisible] = useState(false);
@@ -29,8 +30,11 @@ export default function CoinCardAPR({ coin }: { coin: StockCoinInfo }) {
 
         dispatch(
             setCorrection({
-                x: -width / 2,
-                y: -height - 20,
+                x:
+                    window.innerWidth > MOBILE_START_WIDTH
+                        ? -width / 2
+                        : -width * 0.85,
+                y: -height - 30,
             })
         );
 

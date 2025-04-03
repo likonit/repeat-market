@@ -3,7 +3,7 @@ import StructCheckboxBlock from "./CheckboxBlock";
 import { useDispatch } from "react-redux";
 import { changeInput } from "@/store/inputSlice";
 import StructButton from "./Button";
-import * as style from "@/styles/Struct/Visualization/block.module.css";
+import * as style from "@/styles/Struct/Visualization/section.module.css";
 
 const checkBoxes: CheckBoxInfo[] = [
     {

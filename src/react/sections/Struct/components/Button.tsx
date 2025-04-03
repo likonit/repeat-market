@@ -1,7 +1,7 @@
 import { createStockList } from "@/store/currenciesSlice";
 import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
-import * as style from "@/styles/Struct/Visualization/block.module.css";
+import * as style from "@/styles/Struct/Visualization/section.module.css";
 import smoothScrollTo from "@/scripts/helpers/dom/scrollToElement";
 import { setErrorText, setErrorVisibility } from "@/store/modalSlice";
 

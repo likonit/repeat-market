@@ -89,3 +89,13 @@
         --market-cap-block-height: 85vh;
     }
 }
+
+@media screen and (max-width: 396px) {
+    .marketCapBlock__info_element__text {
+        font-size: 9px;
+    }
+
+    .marketCapBlock {
+        width: 97vw;
+    }
+}

@@ -24,7 +24,7 @@ const cardsInfo: PrinciplesCardInfo[] = [
     },
     {
         header: "Заработок",
-        text: "Рассчитываем максимальный заработок пользователя через систему Bybit Earn.",
+        text: "Рассчитываем максимальную доходность пользователя через систему Bybit Earn.",
         icon: logo_btc,
     },
 ];

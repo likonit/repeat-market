@@ -137,3 +137,33 @@ footer {
         padding: 11px 16px;
     }
 }
+
+@media screen and (max-width: 456px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    :root {
+        --main-text-size: 11px;
+        --icons-width: 32px;
+    }
+
+    :root {
+        --borders-margin: 5vw;
+    }
+
+    footer {
+        margin: 8vh 0 0 0;
+        font-size: 10px;
+    }
+
+    button {
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 396px) {
+    h1 {
+        font-size: 24px;
+    }
+}

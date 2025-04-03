@@ -44,3 +44,16 @@
         padding: 30vh 0 10vh 0;
     }
 }
+
+@media screen and (max-width: 456px) {
+    .about {
+        padding: 20vh 0 10vh 0;
+    }
+}
+
+@media screen and (max-width: 396px) {
+    .about__text p {
+        max-width: 90%;
+        font-size: 13px;
+    }
+}

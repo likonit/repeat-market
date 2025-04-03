@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import StockCoinCard from "./CoinCard";
 import { setModalVisibility } from "@/store/modalSlice";
 import * as style from "@/styles/Struct/Stock/stocklist.module.css";
+import * as styleButton from "@/styles/Struct/Visualization/section.module.css";
 import * as globalStyle from "@/styles/index.module.css";
 import ModalWindowPotral from "@/react/sections/Modal/ModalWindowPortal";
 import { setTooltipVisibility, setTooltipZindex } from "@/store/tooltipSlice";
@@ -29,7 +30,7 @@ export default function StockDescription() {
 
     return (
         <div>
-            <div className={style.button_block}>
+            <div className={styleButton.button_block}>
                 <button
                     className={globalStyle.blueButton}
                     onClick={() => {

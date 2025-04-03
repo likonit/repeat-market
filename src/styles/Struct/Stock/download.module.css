@@ -32,3 +32,17 @@
         margin: 25px 0;
     }
 }
+
+@media screen and (max-width: 468px) {
+    .downloadBlock a {
+        font-size: 13px;
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 396px) {
+    .downloadBlock a {
+        font-size: 12px;
+        margin: 12px 0;
+    }
+}

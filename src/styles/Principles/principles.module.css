@@ -64,6 +64,7 @@
         margin: 20px;
         width: 25vw;
     }
+
     .principles__cardsContainer__grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -112,5 +113,36 @@
 
     .principles h1 {
         padding: 5vh 0 8vh 0;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .principles__cardsContainer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .principles__cardsContainer__grid__card {
+        margin: 16px 0;
+        width: 80vw;
+        padding: 4vw;
+    }
+
+    .principles__cardsContainer__grid__card p {
+        font-size: 13px;
+        padding-bottom: 2vh;
+    }
+
+    .principles__cardsContainer__grid__card h3 {
+        padding-left: 12px;
+    }
+}
+
+@media screen and (max-width: 456px) {
+    .principles__cardsContainer__grid__card {
+        margin: 10px 0;
+    }
+
+    .principles__cardsContainer__grid__card p {
+        font-size: 12px;
     }
 }
