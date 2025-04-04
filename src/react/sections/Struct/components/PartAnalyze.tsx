@@ -9,7 +9,7 @@ export default function PartAnalyze() {
         (store: RootState) => store.currenciesSlice
     );
     const [stockMarketCap, setStockMarketCap] = useState(0);
-    const [color, setColor] = useState<string>("333");
+    const [color, setColor] = useState<string>("#fff");
 
     useEffect(() => {
         const stockMarketCap = stockList.reduce(

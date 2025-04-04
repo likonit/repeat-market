@@ -12,21 +12,14 @@ export default function Tooltip() {
     let lastTimeChecked = new Date().getTime();
 
     useEffect(() => {
-        const FPS_visible = 1000 / 120;
-        const FPS_invisible = 1000 / 30;
-
         function handleMouseClick(event: MouseEvent) {
             setPos({ x: event.clientX, y: event.clientY });
         }
 
         function handleMouseMove(event: MouseEvent) {
-            if (
-                new Date().getTime() - lastTimeChecked >
-                (visible ? FPS_visible : FPS_invisible)
-            ) {
-                lastTimeChecked = new Date().getTime();
+            requestAnimationFrame(() => {
                 setPos({ x: event.clientX, y: event.clientY });
-            }
+            });
         }
 
         if (window.innerWidth >= MOBILE_START_WIDTH)

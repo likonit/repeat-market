@@ -11,17 +11,18 @@ export default function smoothScrollTo(
         targetPosition - startPosition + (options?.correction ?? 0);
     const duration = options?.duration ?? 400;
 
-    const FPS = 1000 / 90;
+    let startTime = 0;
 
-    function scrolling(i: number) {
-        const step = distance / (duration / FPS);
-        window.scrollTo(0, startPosition + step * i);
+    function scrolling() {
+        const nowTime = new Date().getTime();
+        if (startTime == 0) startTime = new Date().getTime();
 
-        if (i < duration / FPS)
-            setTimeout(() => {
-                scrolling(i + 1);
-            }, FPS);
+        const coef = (nowTime - startTime) / duration;
+        const step = distance * coef;
+
+        window.scrollTo(0, startPosition + step);
+
+        if (coef < 1) requestAnimationFrame(scrolling);
     }
-
-    scrolling(1);
+    requestAnimationFrame(scrolling);
 }
