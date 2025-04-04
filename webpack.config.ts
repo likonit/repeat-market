@@ -54,6 +54,7 @@ export default function config(env: {
                 template: "public/index.html",
                 filename: "index.html",
                 inject: "body",
+                favicon: "public/favicon.ico",
             }),
         ],
         devServer: devServer,

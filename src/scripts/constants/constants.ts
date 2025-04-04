@@ -26,6 +26,7 @@ export const memeCoins = [
     "MELANIA",
     "NOT",
     "POPCAT",
+    "MEW",
 ];
 
 export interface StakeInfo {
