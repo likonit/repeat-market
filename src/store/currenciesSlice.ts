@@ -23,7 +23,7 @@ const initialState: {
 };
 
 export const fetchCurrencies = createAsyncThunk("cyrrencies/get", async () => {
-    const currencies = await loadCoins(30);
+    const currencies = await loadCoins(200);
     return currencies;
 });
 

@@ -16,9 +16,6 @@ const modalSlice = createSlice({
     name: "modal/slice",
     initialState,
     reducers: {
-        changeModalVisibility: function (state) {
-            state.visible = !current(state).visible;
-        },
         setModalVisibility: function (state, action: PayloadAction<boolean>) {
             state.visible = action.payload;
         },
@@ -31,10 +28,6 @@ const modalSlice = createSlice({
     },
 });
 
-export const {
-    changeModalVisibility,
-    setModalVisibility,
-    setErrorVisibility,
-    setErrorText,
-} = modalSlice.actions;
+export const { setModalVisibility, setErrorVisibility, setErrorText } =
+    modalSlice.actions;
 export default modalSlice.reducer;

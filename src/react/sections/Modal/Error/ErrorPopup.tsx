@@ -14,7 +14,7 @@ export default function ErrorPopup() {
         if (!errorVisible) return;
         setTimeout(() => {
             dispatch(setErrorVisibility(false));
-        }, 2500);
+        }, 2000);
     }, [errorVisible]);
 
     return (

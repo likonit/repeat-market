@@ -26,6 +26,7 @@ export default function Struct() {
 
     useEffect(() => {
         if (inError) {
+            setVisualizationVisible(false);
             dispatch(setErrorVisibility(true));
             dispatch(
                 setErrorText(

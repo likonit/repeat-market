@@ -17,7 +17,7 @@ export default function MenuElement({
 }) {
     useEffect(() => {
         const linkedElement = document.getElementById(link.split("#")[1]);
-        function checkPosition(e: any) {
+        function checkPosition() {
             if (linkedElement) {
                 const currY = linkedElement.getBoundingClientRect().top;
                 if (Math.abs(currY) <= 300) {

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import * as style from "@/styles/Modal/modal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { changeModalVisibility, setModalVisibility } from "@/store/modalSlice";
+import { setModalVisibility } from "@/store/modalSlice";
 
 export default function ModalWindow() {
     const { visible } = useSelector((store: RootState) => store.modalSlice);
