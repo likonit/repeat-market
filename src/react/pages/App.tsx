@@ -33,11 +33,11 @@ export default function App() {
 
         onResizeEvent();
 
-        window.addEventListener("resize", onResizeEvent);
+        // window.addEventListener("resize", onResizeEvent);
 
-        return () => {
-            window.removeEventListener("resize", onResizeEvent);
-        };
+        // return () => {
+        //     window.removeEventListener("resize", onResizeEvent);
+        // };
     }, []);
 
     return (
