@@ -5,7 +5,7 @@ export default async function loadCoins(
 ): Promise<CoinRowInfo[]> {
     try {
         const fetchResult = await fetch(
-            `http://127.0.0.1:5132/crypto?limit=${limit}`
+            `http://45.155.207.9:5132/crypto?limit=${limit}`
         );
         const jsonData: { status: any; data: any[] } = await fetchResult.json();
         const rows: CoinRowInfo[] = jsonData.data.map((item, i) => {
