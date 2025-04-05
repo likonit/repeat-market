@@ -2,7 +2,7 @@
     width: 100vw;
     position: fixed;
     top: 0;
-    height: 8vh;
+    height: calc(8 * var(--vh));
     display: flex;
     justify-content: center;
     align-items: center;

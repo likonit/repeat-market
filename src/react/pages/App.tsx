@@ -10,6 +10,7 @@ import * as style from "@/styles/bg.module.css";
 import "@/styles/index.module.css";
 import Footer from "../sections/Footer";
 import ErrorPopup from "../sections/Modal/Error/ErrorPopup";
+import { useEffect } from "react";
 
 export default function App() {
     const isVisibleOverflow = useSelector(
@@ -19,6 +20,25 @@ export default function App() {
     document.getElementsByTagName("body")[0].style.overflowY = isVisibleOverflow
         ? "hidden"
         : "auto";
+
+    useEffect(() => {
+        const rootElement = document.documentElement;
+
+        function onResizeEvent() {
+            rootElement.style.setProperty(
+                "--vh",
+                window.innerHeight * 0.01 + "px"
+            );
+        }
+
+        onResizeEvent();
+
+        window.addEventListener("resize", onResizeEvent);
+
+        return () => {
+            window.removeEventListener("resize", onResizeEvent);
+        };
+    }, []);
 
     return (
         <>
