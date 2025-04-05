@@ -12,6 +12,9 @@ const devServer: DevServerConfiguration = {
     open: true,
     hot: true,
     port: 9002,
+    client: {
+        logging: "none",
+    },
 };
 
 export default function config(env: {
