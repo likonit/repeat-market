@@ -6,11 +6,8 @@
         "build:prod": "npx webpack build --env mode=production",
         "build:dev": "npx webpack build --env mode=development",
         "watch": "npx webpack server",
-        "predeploy": "npm run build:prod",
-        "deploy": "gh-pages -d dist",
         "test": "npx jest"
     },
-    "homepage": "https://likonit.github.io/repeat-market",
     "keywords": [],
     "author": "",
     "license": "ISC",
