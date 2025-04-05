@@ -50,7 +50,7 @@
 }
 
 .visualizationBlock__container__checkboxes {
-    margin: 1vh 0;
+    margin: var(--vh) 0;
 }
 
 .visualizationBlock__container__checkboxes label {
@@ -133,7 +133,7 @@
 
 @media screen and (max-width: 828px) {
     .visualizationBlock__container__checkboxes {
-        margin: 1.5vh 0;
+        margin: calc(1.5 * var(--vh)) 0;
     }
 
     .visualizationBlock__usdInput {
