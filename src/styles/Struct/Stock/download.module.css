@@ -1,6 +1,6 @@
 .downloadBlock {
     display: flex;
-    padding: 4vh 0;
+    padding: calc(4 * var(--vh)) 0;
     justify-content: center;
     font-family: "Raleway";
 }

@@ -1,5 +1,5 @@
 .principles h1 {
-    padding: 10vh 0 20vh 0;
+    padding: calc(10 * var(--vh)) 0 calc(7 * var(--vh)) 0;
 }
 
 .principles__cardsContainer {
@@ -32,7 +32,7 @@
     font-family: "Raleway";
     font-size: 20px;
     color: white;
-    margin: 2vh 0;
+    margin: calc(2 * var(--vh)) 0;
 }
 
 .principles__cardsContainer__grid__card:hover {
@@ -81,11 +81,11 @@
 
     .principles__cardsContainer__grid__card h3 {
         font-size: 18px;
-        margin: 2.5vh 0;
+        margin: calc(2.5 * var(--vh)) 0;
     }
 
     .principles h1 {
-        padding: 10vh 0 12vh 0;
+        padding: calc(10 * var(--vh)) 0 calc(12 * var(--vh)) 0;
     }
 }
 
@@ -112,7 +112,7 @@
     }
 
     .principles h1 {
-        padding: 5vh 0 8vh 0;
+        padding: calc(5 * var(--vh)) 0 calc(8 * var(--vh)) 0;
     }
 }
 
@@ -129,7 +129,7 @@
 
     .principles__cardsContainer__grid__card p {
         font-size: 13px;
-        padding-bottom: 2vh;
+        padding-bottom: calc(2 * var(--vh));
     }
 
     .principles__cardsContainer__grid__card h3 {

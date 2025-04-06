@@ -7,15 +7,15 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: calc(100 * var(--vh));
     background: rgba(0, 0, 0, 0.8);
 }
 
 .modalWindowContainer__action {
     width: 70vw;
-    height: 85vh;
+    height: calc(85 * var(--vh));
     background: #160622;
-    padding: 3vh 2vw 2vh 2vw;
+    padding: calc(3 * var(--vh)) 2vw calc(2 * var(--vh)) 2vw;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
 @media screen and (max-width: 1024px) {
     .modalWindowContainer__action {
         width: 90vw;
-        height: 90vh;
+        height: calc(90 * var(--vh));
     }
 
     .modalWindowContainer__closeButton {
@@ -53,7 +53,7 @@
     .modalWindowContainer__action {
         box-sizing: border-box;
         width: 100vw;
-        height: 100vh;
+        height: calc(100 * var(--vh));
         border-radius: 0;
     }
 

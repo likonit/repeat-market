@@ -1,11 +1,11 @@
 .about {
-    padding: 30vh 0 20vh 0;
+    padding: calc(30 * var(--vh)) 0 calc(20 * var(--vh)) 0;
 }
 
 .about__text {
     width: 100%;
     font-size: 18px;
-    margin: 5vh 0;
+    margin: calc(5 * var(--vh)) 0;
     text-align: center;
     color: #b6b6b6;
     display: flex;
@@ -17,7 +17,7 @@
 }
 
 .about__buttonContainer {
-    margin: 3vh 0;
+    margin: calc(3 * var(--vh)) 0;
     text-align: center;
 }
 
@@ -28,7 +28,7 @@
     }
 
     .about__text {
-        margin: 8vh 0;
+        margin: calc(8 * var(--vh)) 0;
     }
 }
 
@@ -41,13 +41,13 @@
 
 @media screen and (max-width: 524px) {
     .about {
-        padding: 30vh 0 10vh 0;
+        padding: calc(30 * var(--vh)) 0 calc(10 * var(--vh)) 0;
     }
 }
 
 @media screen and (max-width: 456px) {
     .about {
-        padding: 20vh 0 10vh 0;
+        padding: calc(20 * var(--vh)) 0 calc(10 * var(--vh)) 0;
     }
 }
 

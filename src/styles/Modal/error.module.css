@@ -3,18 +3,18 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 10vh;
+    height: calc(10 * var(--vh));
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-    padding-bottom: 2vh;
+    padding-bottom: calc(2 * var(--vh));
     opacity: 0.9;
     pointer-events: none;
 }
 
 .errorModal_noactive {
-    bottom: -20vh;
+    bottom: calc(-20 * var(--vh));
     opacity: 0;
     transition: 0.3s;
 }

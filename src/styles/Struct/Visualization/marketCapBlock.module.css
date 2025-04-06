@@ -1,5 +1,5 @@
 :root {
-    --market-cap-block-height: 70vh;
+    --market-cap-block-height: calc(70 * var(--vh));
 }
 
 .marketCap {
@@ -64,7 +64,7 @@
 
 @media screen and (max-width: 1024px) {
     :root {
-        --market-cap-block-height: 75vh;
+        --market-cap-block-height: calc(75 * var(--vh));
     }
 
     .marketCapBlock {
@@ -86,7 +86,7 @@
     }
 
     :root {
-        --market-cap-block-height: 85vh;
+        --market-cap-block-height: calc(85 * var(--vh));
     }
 }
 

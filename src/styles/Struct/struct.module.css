@@ -1,5 +1,5 @@
 .struct h1 {
-    padding: 20vh 0 15vh 0;
+    padding: calc(20 * var(--vh)) 0 calc(15 * var(--vh)) 0;
 }
 
 .instructionBlock {
@@ -7,7 +7,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    padding-bottom: 10vh;
+    padding-bottom: calc(10 * var(--vh));
 }
 
 .instructionBlock div {
@@ -49,15 +49,15 @@
 
     .instructionBlock div {
         width: 85%;
-        padding: 3vh 3vw;
+        padding: calc(3 * var(--vh)) 3vw;
     }
 
     .instructionBlock {
-        padding-bottom: 2vh;
+        padding-bottom: calc(2 * var(--vh));
     }
 
     .struct h1 {
-        padding: 15vh 0 10vh 0;
+        padding: calc(15 * var(--vh)) 0 calc(10 * var(--vh)) 0;
     }
 }
 

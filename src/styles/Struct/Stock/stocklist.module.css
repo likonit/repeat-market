@@ -4,7 +4,7 @@
 }
 
 .stocklist {
-    max-height: 80vh;
+    max-height: calc(80 * var(--vh));
     width: 100%;
     overflow-y: auto;
     border: 1px solid var(--modal-borders-color);
@@ -33,7 +33,7 @@
 .stocklist__coinCard {
     display: grid;
     grid-template-columns: var(--stocklist-grid);
-    padding: 1vh 0;
+    padding: calc(1 * var(--vh)) 0;
     border-bottom: 1px solid var(--modal-borders-color);
     align-items: center;
     color: #e1e1e1;
@@ -167,13 +167,13 @@
     }
 
     .stocklist {
-        max-height: 88vh;
+        max-height: calc(88 * var(--vh));
     }
 }
 
 @media screen and (max-width: 396px) {
     .stocklist {
-        max-height: 90vh;
+        max-height: calc(90 * var(--vh));
     }
 
     .stocklist__headers h3 {
