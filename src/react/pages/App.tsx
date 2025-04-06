@@ -32,12 +32,11 @@ export default function App() {
                     activeEl.getAttribute("contenteditable") === "true");
 
             if (!isInputFocused) {
-                rootElement.style.setProperty(
-                    "--vh",
-                    (window.visualViewport
-                        ? window.visualViewport.height * 0.01
-                        : window.innerHeight * 0.01) + "px"
-                );
+                const value = window.visualViewport
+                    ? window.visualViewport.height * 0.01
+                    : window.innerHeight * 0.01;
+                rootElement.style.setProperty("--vh", value + "px");
+                console.log(value);
             }
         }
 
