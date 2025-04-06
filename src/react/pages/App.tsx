@@ -36,17 +36,10 @@ export default function App() {
                     ? window.visualViewport.height * 0.01
                     : window.innerHeight * 0.01;
                 rootElement.style.setProperty("--vh", value + "px");
-                console.log(value);
             }
         }
 
         onResizeEvent();
-
-        window.addEventListener("resize", onResizeEvent);
-
-        return () => {
-            window.removeEventListener("resize", onResizeEvent);
-        };
     }, []);
 
     return (
