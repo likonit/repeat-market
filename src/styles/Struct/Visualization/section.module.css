@@ -193,7 +193,7 @@
     }
 
     .visualizationBlock h3 {
-        margin: calc(5 * var(--vh)) 0calc (2 * var(--vh));
+        margin: calc(5 * var(--vh)) calc(2 * var(--vh));
         font-size: 18px;
     }
 
