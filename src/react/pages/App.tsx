@@ -25,19 +25,27 @@ export default function App() {
         const rootElement = document.documentElement;
 
         function onResizeEvent() {
-            rootElement.style.setProperty(
-                "--vh",
-                window.innerHeight * 0.01 + "px"
-            );
+            const activeEl = document.activeElement;
+            const isInputFocused =
+                activeEl &&
+                (activeEl.tagName === "INPUT" ||
+                    activeEl.getAttribute("contenteditable") === "true");
+
+            if (!isInputFocused) {
+                rootElement.style.setProperty(
+                    "--vh",
+                    window.innerHeight * 0.01 + "px"
+                );
+            }
         }
 
         onResizeEvent();
 
-        // window.addEventListener("resize", onResizeEvent);
+        window.addEventListener("resize", onResizeEvent);
 
-        // return () => {
-        //     window.removeEventListener("resize", onResizeEvent);
-        // };
+        return () => {
+            window.removeEventListener("resize", onResizeEvent);
+        };
     }, []);
 
     return (
