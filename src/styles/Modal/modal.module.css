@@ -52,7 +52,7 @@
     .modalWindowContainer__action {
         box-sizing: border-box;
         width: 100vw;
-        height: calc(100 * var(--vh));
+        height: 100vh;
         border-radius: 0;
     }
 
