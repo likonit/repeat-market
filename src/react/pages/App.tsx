@@ -35,7 +35,7 @@ export default function App() {
                 rootElement.style.setProperty(
                     "--vh",
                     (window.visualViewport
-                        ? window.visualViewport.height
+                        ? window.visualViewport.height * 0.01
                         : window.innerHeight * 0.01) + "px"
                 );
             }
