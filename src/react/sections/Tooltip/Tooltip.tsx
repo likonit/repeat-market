@@ -25,14 +25,14 @@ export default function Tooltip() {
         if (window.innerWidth >= MOBILE_START_WIDTH)
             document.addEventListener("mousemove", handleMouseMove);
         else {
-            document.addEventListener("click", handleMouseClick);
+            window.addEventListener("click", handleMouseClick);
         }
 
         return () => {
             if (window.innerWidth >= MOBILE_START_WIDTH)
                 document.removeEventListener("mousemove", handleMouseMove);
             else {
-                document.removeEventListener("click", handleMouseClick);
+                window.removeEventListener("click", handleMouseClick);
             }
         };
     }, [lastTimeChecked, visible]);

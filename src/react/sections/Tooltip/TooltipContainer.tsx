@@ -1,3 +1,4 @@
+import useThrottle from "@/react/hooks/useThrottle";
 import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
 import {
     setCorrection,
@@ -21,33 +22,57 @@ export default function TooltipContainer({
     const target = useRef<HTMLDivElement>(null);
 
     const dispatch = useDispatch();
+    const throttle = useThrottle();
 
-    // что-то типа троттлинга.
     useEffect(() => {
         dispatch(setTooltipZindex(zIndex));
 
         function handleMouseIn() {
             dispatch(setTooltipVisibility(true));
-            mouseInAction(true);
+            mouseInAction();
+        }
+
+        function handleScroll() {
+            throttle(handleMouseLeave);
         }
 
         function handleMouseLeave() {
             dispatch(setTooltipVisibility(false));
-            mouseOutAction(false);
+            mouseOutAction();
         }
 
-        target.current?.addEventListener("mouseenter", handleMouseIn);
-        target.current?.addEventListener("mouseleave", handleMouseLeave);
+        function handleClickOutside(event: MouseEvent) {
+            if (target.current && target.current.firstChild != event.target) {
+                mouseOutAction();
+            } else {
+                mouseInAction();
+            }
+        }
 
         if (window.innerWidth <= MOBILE_START_WIDTH) {
-            window.addEventListener("scroll", handleMouseLeave);
+            window.addEventListener("scroll", handleScroll);
+            target.current?.addEventListener("click", handleMouseIn);
+            document.addEventListener("click", handleClickOutside);
+        } else {
+            target.current?.addEventListener("mouseenter", handleMouseIn);
+            target.current?.addEventListener("mouseleave", handleMouseLeave);
         }
-        return () => {
-            target.current?.removeEventListener("mouseenter", handleMouseIn);
-            target.current?.removeEventListener("mouseleave", handleMouseLeave);
 
+        return () => {
             if (window.innerWidth <= MOBILE_START_WIDTH) {
-                window.removeEventListener("scroll", handleMouseLeave);
+                window.removeEventListener("scroll", handleScroll);
+                target.current?.removeEventListener("click", handleMouseIn);
+                document.removeEventListener("click", handleClickOutside);
+            } else {
+                target.current?.removeEventListener(
+                    "mouseenter",
+                    handleMouseIn
+                );
+                target.current?.removeEventListener(
+                    "mouseleave",
+                    handleMouseLeave
+                );
+                target.current?.removeEventListener("click", handleMouseIn);
             }
         };
     }, []);

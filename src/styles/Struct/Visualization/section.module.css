@@ -137,7 +137,7 @@
     }
 
     .visualizationBlock__usdInput {
-        margin-top: 3vh;
+        margin-top: calc(3 * var(--vh));
         font-size: 16px;
     }
 
@@ -150,7 +150,6 @@
     .visualizationBlock__usdInput {
         font-size: 15px;
         width: 50vw;
-        margin-top: 3vh;
     }
 
     .visualizationBlock h3 {

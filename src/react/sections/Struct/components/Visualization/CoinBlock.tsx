@@ -8,6 +8,7 @@ import TooltipPotral from "@/react/sections/Tooltip/TooltipPortal";
 import TooltipContainer from "@/react/sections/Tooltip/TooltipContainer";
 import { ActiveBlockContext } from "./providers/activeBlocks";
 import { MOBILE_START_WIDTH } from "@/scripts/constants/cssConstants";
+import useThrottle from "@/react/hooks/useThrottle";
 
 export default function MarketVisualizationCoin({
     coin,
@@ -21,11 +22,24 @@ export default function MarketVisualizationCoin({
     const activeBlocks = useContext(ActiveBlockContext);
     const block = useRef<HTMLDivElement>(null);
 
+    const throttle = useThrottle();
+
     useEffect(() => {
         // заранее кешируем
         if (coin.imageLink.length > 0) {
             const image = new Image();
             image.src = coin.imageLink;
+        }
+
+        function handleClick(event: MouseEvent) {
+            if (block.current && block.current.contains(event.target as Node)) {
+                handleMouseIn();
+            }
+        }
+
+        function handleScroll() {
+            // троттлинг
+            throttle(handleMouseOut);
         }
 
         function handleMouseIn() {
@@ -36,19 +50,24 @@ export default function MarketVisualizationCoin({
             activeBlocks?.setIndex(-1);
         }
 
-        block.current?.addEventListener("mouseenter", handleMouseIn);
-        block.current?.addEventListener("mouseleave", handleMouseOut);
-
         if (window.innerWidth <= MOBILE_START_WIDTH) {
-            document.addEventListener("scroll", handleMouseOut);
+            document.addEventListener("scroll", handleScroll);
+            document.addEventListener("click", handleClick);
+        } else {
+            block.current?.addEventListener("mouseenter", handleMouseIn);
+            block.current?.addEventListener("mouseleave", handleMouseOut);
         }
 
         return () => {
-            block.current?.removeEventListener("mouseenter", handleMouseIn);
-            block.current?.removeEventListener("mouseleave", handleMouseOut);
-
             if (window.innerWidth <= MOBILE_START_WIDTH) {
-                document.removeEventListener("scroll", handleMouseOut);
+                document.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("click", handleClick);
+            } else {
+                block.current?.removeEventListener("mouseenter", handleMouseIn);
+                block.current?.removeEventListener(
+                    "mouseleave",
+                    handleMouseOut
+                );
             }
         };
     }, []);
