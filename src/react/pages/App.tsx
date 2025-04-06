@@ -34,7 +34,9 @@ export default function App() {
             if (!isInputFocused) {
                 rootElement.style.setProperty(
                     "--vh",
-                    window.innerHeight * 0.01 + "px"
+                    (window.visualViewport
+                        ? window.visualViewport.height
+                        : window.innerHeight * 0.01) + "px"
                 );
             }
         }
