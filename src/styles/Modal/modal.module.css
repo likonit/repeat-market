@@ -6,7 +6,8 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: calc(120 * var(--vh));
+    align-items: center;
+    height: calc(100 * var(--vh));
     background: rgba(0, 0, 0, 0.8);
 }
 
@@ -54,6 +55,11 @@
         width: 100vw;
         height: 100vh;
         border-radius: 0;
+    }
+
+    .modalWindowContainer {
+        align-items: start;
+        height: calc(120 * var(--vh));
     }
 
     .modalWindowContainer__closeButton {
